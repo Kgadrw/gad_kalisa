@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true); // Start loading animation
 
@@ -34,7 +34,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative mx-auto border border-gray-200 rounded-4xl px-6 sm:px-12 py-12 bg-white" style={{ backgroundImage: 'url(/bg.jpg)' }}>
+    <section
+      className="relative mx-auto border border-gray-200 rounded-4xl px-6 sm:px-12 py-12 bg-white"
+      style={{ backgroundImage: "url(/bg.jpg)" }}
+    >
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
         <div className="bg-white p-6 rounded-lg border border-gray-200 w-full max-w-md mx-auto">
           <h2 className="text-3xl font-bold font-[Poppins] text-blue-400 mb-4 text-center sm:text-left">
@@ -51,7 +54,9 @@ const Contact = () => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-blue-400">Name</label>
+                <label htmlFor="name" className="block text-sm font-semibold text-blue-400">
+                  Name
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -63,7 +68,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-blue-400">Email</label>
+                <label htmlFor="email" className="block text-sm font-semibold text-blue-400">
+                  Email
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -75,14 +82,16 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-blue-400">Message</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-blue-400">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="3"
+                  rows={3}
                   className="mt-1 p-2 w-full text-gray-700 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
                 ></textarea>
               </div>
@@ -102,8 +111,19 @@ const Contact = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                       >
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 11-8 8z"></path>
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 11-8 8z"
+                        ></path>
                       </svg>
                       Sending...
                     </>
