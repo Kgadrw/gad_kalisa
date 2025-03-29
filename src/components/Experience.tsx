@@ -40,7 +40,8 @@ const experiences = [
 ];
 
 const Experience = () => {
-  const [selectedExperience, setSelectedExperience] = useState(null);
+ const [selectedExperience, setSelectedExperience] = useState<number | null>(null);
+
 
   return (
     <section className="relative mx-auto px-6 sm:px-12 md:px-24 lg:px-32 py-12 border-b border-gray-300 bg-white">
