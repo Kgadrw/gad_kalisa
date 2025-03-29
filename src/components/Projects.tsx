@@ -2,41 +2,40 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 
-// Sample Projects Data with Categories
 const projects = [
   {
     name: "Shop Ease",
     description: "A logistics company frontend website to manage shipments and deliveries.",
     link: "https://my-project-eosin-rho.vercel.app/",
-    image: "/web.png", // Replace with your actual image URL
+    image: "/web.png",
     category: "Web"
   },
   {
     name: "WEVENT",
     description: "An event management platform designed to help users create and manage events.",
     link: "#",
-    image: "/Wevent.JPG", // Replace with your actual image URL
+    image: "/Wevent.JPG",
     category: "Web"
   },
   {
     name: "Unicash",
     description: "A financial dashboard for university students to manage their money and gain loans.",
     link: "#",
-    image: "/web.png", // Replace with your actual image URL
+    image: "/web.png",
     category: "Mobile"
   },
   {
     name: "Personal Portfolio",
     description: "A personal portfolio website to showcase projects and work.",
     link: "#",
-    image: "/IgaTech.JPG", // Replace with your actual image URL
+    image: "/IgaTech.JPG",
     category: "UI/UX"
   },
   {
     name: "Project Pro",
     description: "A professional-grade project with advanced features.",
     link: "#",
-    image: "/3dp.JPG", // Replace with your actual image URL
+    image: "/3dp.JPG",
     category: "Pro"
   }
 ];
@@ -44,34 +43,30 @@ const projects = [
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Filter projects based on selected category
   const filteredProjects = selectedCategory === "All" 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <section className="bg-white relative mx-auto  py-12 px-32 ">
-      {/* Total Projects Count */}
-      <div className="mb-6 flex justify-between items-center">
-        <h2 className="text-6xl font-bold font-[Poppins] text-gray-900">Projects</h2>
-        <span className="text-gray-700 font-[Poppins] font-semibold">Total Projects: {filteredProjects.length}</span>
+    <section className="bg-white relative mx-auto py-12 px-6 sm:px-12 md:px-24 lg:px-32">
+      <div className="mb-6 flex flex-col sm:flex-row justify-between items-center">
+        <h2 className="text-4xl sm:text-5xl font-bold font-[Poppins] text-gray-700">Projects</h2>
+        <span className="text-gray-700 font-[Poppins] font-semibold mt-2 sm:mt-0">Total Projects: {filteredProjects.length}</span>
       </div>
-
-      {/* Categories Filter */}
-      <div className="mb-6 flex space-x-4">
+      
+      <div className="mb-6 flex flex-wrap justify-center sm:justify-start gap-2">
         {["All", "Pro", "Web", "Mobile", "UI/UX"].map(category => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 text-sm font-semibold font-[Poppins] rounded-lg ${selectedCategory === category ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-900'} transition duration-300`}
+            className={`px-4 py-2 text-sm font-semibold font-[Poppins] rounded-lg transition duration-300 ${selectedCategory === category ? 'bg-blue-400 text-white' : 'bg-gray-400 text-gray-700'}`}
           >
             {category}
           </button>
         ))}
       </div>
 
-      {/* Projects Grid Container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={index}
@@ -80,7 +75,6 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
-            {/* Project Image */}
             <img
               src={project.image}
               alt={project.name}
@@ -96,12 +90,11 @@ const Projects = () => {
             >
               View Project
             </a>
-            {/* GitHub Icon */}
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-4 right-4 text-gray-900 hover:text-gray-700"
+              className="absolute bottom-4 right-4 text-blue-400 hover:text-blue-400"
             >
               <Github size={20} />
             </a>
