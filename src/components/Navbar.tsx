@@ -24,10 +24,10 @@ const Navbar = () => {
                     
                     {/* Social icons */}
                     <div className={`lg:flex space-x-4 ${isOpen ? "flex flex-col items-center absolute top-16 right-6 bg-white border border-gray-300 p-4 rounded-lg" : "hidden lg:flex"}`}>
-                        <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Kgadrw" target="_blank" rel="noopener noreferrer">
                             <Github size={24} className="text-blue-400 hover:text-blue-500" />
                         </a>
-                        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+                        <a href="linkedin.com/in/gad-kalisa-2aa319333/" target="_blank" rel="noopener noreferrer">
                             <Linkedin size={24} className="text-blue-400 hover:text-blue-500" />
                         </a>
                     </div>

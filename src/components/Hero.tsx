@@ -15,10 +15,10 @@ const Hero = () => {
                         Hello, I am Gad Kalisa
                     </h1>
                     <TypeAnimation
-                        sequence={[
-                            "I am a Frontend Developer", 1000,
-                            "UI/UX Designer", 1000,
-                            "Mobile Developer", 1000
+                        sequence={[ 
+                            "I am a Frontend Developer", 1000, 
+                            "UI/UX Designer", 1000, 
+                            "Mobile Developer", 1000 
                         ]}
                         wrapper="span"
                         speed={50}
@@ -43,20 +43,29 @@ const Hero = () => {
                         user experiences and efficient web solutions.
                     </p>
                     <div className="mt-4 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                        <button className="px-4 py-3 bg-blue-400 text-white font-bold rounded-full hover:bg-gray-50 border border-blue-400 hover:text-blue-400 w-full sm:w-auto">
+                        {/* Hire me Button */}
+                        <a 
+                            href="mailto:kalisagad05@gmail.com"
+                            className="px-4 py-3 bg-blue-400 text-white font-bold rounded-full hover:bg-gray-50 border border-blue-400 hover:text-blue-400 w-full sm:w-auto"
+                        >
                             Hire me
-                        </button>
-                        <button className="flex items-center justify-center space-x-2 px-4 py-3 border border-blue-400 text-blue-400 font-bold rounded-full hover:text-white hover:bg-blue-400 w-full sm:w-auto">
+                        </a>
+                        {/* Get CV Button */}
+                        <a 
+                            href="/CV.pdf"
+                            download
+                            className="flex items-center justify-center space-x-2 px-4 py-3 border border-blue-400 text-blue-400 font-bold rounded-full hover:text-white hover:bg-blue-400 w-full sm:w-auto"
+                        >
                             <CloudUpload className="w-5 h-5" />
                             <span>Get my CV</span>
-                        </button>
+                        </a>
                     </div>
                     {/* Social Media Icons */}
                     <div className="mt-8 flex justify-center md:justify-start space-x-4 text-white text-2xl">
-                        <a href="#" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Gitlab /></a>
-                        <a href="#" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Twitter /></a>
-                        <a href="#" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Github /></a>
-                        <a href="#" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Linkedin /></a>
+                        <a href="https://gitlab.com/kalisagad05" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Gitlab /></a>
+                        <a href="https://x.com/gadkalisa05" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Twitter /></a>
+                        <a href="https://github.com/Kgadrw" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Github /></a>
+                        <a href="https://linkedin.com/in/gad-kalisa-2aa319333/" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Linkedin /></a>
                     </div>
                 </div>
                 
