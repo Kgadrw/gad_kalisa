@@ -11,7 +11,7 @@ const skills = [
 const Skills = () => {
   return (
     <section className="relative bg-gray-50 mx-auto px-6 md:px-12 lg:px-32 py-12" style={{ backgroundImage: 'url(/line.png)' }}>
-      <h2 className="text-4xl md:text-6xl font-bold font-[Poppins] text-gray-900 mb-6 text-center md:text-left">Ski<span className="text-blue-400">lls</span></h2>
+      <h2 className="text-4xl md:text-6xl font-bold font-[Poppins] text-gray-900 mb-6 text-center md:text-left">Skills</h2>
       
       {/* Skills Grid Container */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

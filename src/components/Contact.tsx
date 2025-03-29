@@ -37,9 +37,11 @@ const Contact = () => {
     <section className="relative mx-auto border border-gray-200 rounded-4xl px-6 sm:px-12 py-12 bg-white" style={{ backgroundImage: 'url(/bg.jpg)' }}>
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
         <div className="bg-white p-6 rounded-lg border border-gray-200 w-full max-w-md mx-auto">
-          <h2 className="text-3xl font-bold font-[Poppins] text-blue-400 mb-4 text-center sm:text-left">Let's Connect!</h2>
+          <h2 className="text-3xl font-bold font-[Poppins] text-blue-400 mb-4 text-center sm:text-left">
+            Let&apos;s Connect!
+          </h2>
           <p className="text-gray-700 font-[Poppins] text-sm mb-4 text-center sm:text-left">
-            Have any questions or want to work together? Fill out the form below, and let's chat!
+            Have any questions or want to work together? Fill out the form below, and let&apos;s chat!
           </p>
           {isSubmitted ? (
             <div className="text-center">
