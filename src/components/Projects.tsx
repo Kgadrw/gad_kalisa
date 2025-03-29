@@ -7,7 +7,7 @@ const projects = [
     name: "IgaTek",
     description: " platform is designed to onboard local citizens, enabling them to open accounts and access essential digital literacy resources.",
     link: "https://iga.speclucs.rw/",
-    image: "/igatek.jpg",
+    image: "/igatek.JPG",
     category: "Pro"
   },
   {

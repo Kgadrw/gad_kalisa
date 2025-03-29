@@ -10,8 +10,8 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="flex justify-between h-16 px-16 items-center">
                     {/* Name on the left */}
-                    <Link href="/" className="text-2xl font-black text-blue-400">
-                        GAD KALISA
+                    <Link href="/" className="text-2xl font-black  text-blue-400">
+                       <span className="text-gray-600">G</span>k
                     </Link>
                     
                     {/* Mobile Menu Button */}
