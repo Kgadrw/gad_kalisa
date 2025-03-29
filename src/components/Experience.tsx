@@ -51,13 +51,13 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div 
               key={index} 
-              className={`cursor-pointer p-4 border-b border-blue-400 shadow-md rounded-lg transition duration-300 ease-in-out ${selectedExperience === index ? 'bg-gray-300 text-gray-600 font-[Poppins]' : 'bg-white hover:bg-gray-200 font-[Poppins]'}`} 
+              className={`cursor-pointer p-4 border-b border-blue-400  shadow-md rounded-lg transition duration-300 ease-in-out ${selectedExperience === index ? 'bg-blue-200 text-white font-[Poppins]' : 'bg-white hover:bg-blue-200 font-[Poppins]'}`} 
               onClick={() => setSelectedExperience(index)}
             >
               <div className="flex items-center space-x-3">
-                {index === 0 && <Laptop className="text-2xl text-blue-400" />}
-                {index === 1 && <Factory className="text-2xl text-blue-400" />}
-                {index === 2 && <User className="text-2xl text-blue-400" />}
+                {index === 0 && <Laptop className="text-2xl text-gray-700" />}
+                {index === 1 && <Factory className="text-2xl text-gray-700" />}
+                {index === 2 && <User className="text-2xl text-gray-700" />}
                 <h3 className="text-lg font-semibold text-gray-600">{exp.company}</h3>
               </div>
             </div>

@@ -8,21 +8,21 @@ const projects = [
     description: " platform is designed to onboard local citizens, enabling them to open accounts and access essential digital literacy resources.",
     link: "https://iga.speclucs.rw/",
     image: "/igatek.jpg",
-    category: "Web"
+    category: "Pro"
   },
   {
-    name: "WEVENT",
-    description: "An event management platform designed to help users create and manage events.",
-    link: "#",
-    image: "/Wevent.JPG",
-    category: "Web"
+    name: "JSM Ecomerce",
+    description: "A full-stack e-commerce application built with React, Node.js, and MongoDB.",
+    link: "https://ecommerce-seven-kappa-12.vercel.app/",
+    image: "/jsm.JPG",
+    category: "Pro"
   },
   {
-    name: "Unicash",
-    description: "A financial dashboard for university students to manage their money and gain loans.",
-    link: "#",
-    image: "/web.png",
-    category: "Mobile"
+    name: "Data driven patners",
+    description: "A platform that connects data-driven partners with businesses to enhance decision-making.",
+    link: "https://3dp.rw/",
+    image: "/3dp.JPG",
+    category: "Pro"
   }
 
 ];
@@ -46,7 +46,7 @@ const Projects = () => {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 text-sm font-semibold font-[Poppins] rounded-lg transition duration-300 ${selectedCategory === category ? 'bg-blue-400 text-white' : 'bg-gray-400 text-gray-700'}`}
+            className={`px-4 py-2 text-sm font-semibold font-[Poppins] rounded-lg transition duration-300 ${selectedCategory === category ? 'bg-blue-400 text-white' : 'bg-gray-200 text-gray-700'}`}
           >
             {category}
           </button>
@@ -65,7 +65,7 @@ const Projects = () => {
             <img
               src={project.image}
               alt={project.name}
-              className="w-full h-40 object-cover rounded-lg mb-4"
+              className="w-full h-40 object-cover rounded-lg mb-4 border border-blue-400"
             />
             <h3 className="text-lg font-semibold font-[Poppins] text-gray-800 mb-3">{project.name}</h3>
             <p className="text-sm font-[Poppins] text-gray-700 mb-4">{project.description}</p>
