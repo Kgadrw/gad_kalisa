@@ -4,10 +4,10 @@ import { Github } from "lucide-react";
 
 const projects = [
   {
-    name: "Shop Ease",
-    description: "A logistics company frontend website to manage shipments and deliveries.",
-    link: "https://my-project-eosin-rho.vercel.app/",
-    image: "/web.png",
+    name: "IgaTek",
+    description: " platform is designed to onboard local citizens, enabling them to open accounts and access essential digital literacy resources.",
+    link: "https://iga.speclucs.rw/",
+    image: "/igatek.jpg",
     category: "Web"
   },
   {
@@ -23,21 +23,8 @@ const projects = [
     link: "#",
     image: "/web.png",
     category: "Mobile"
-  },
-  {
-    name: "Personal Portfolio",
-    description: "A personal portfolio website to showcase projects and work.",
-    link: "#",
-    image: "/IgaTech.JPG",
-    category: "UI/UX"
-  },
-  {
-    name: "Project Pro",
-    description: "A professional-grade project with advanced features.",
-    link: "#",
-    image: "/3dp.JPG",
-    category: "Pro"
   }
+
 ];
 
 const Projects = () => {
