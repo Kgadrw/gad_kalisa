@@ -13,6 +13,13 @@ const projects = [
     link: "https://iga.speclucs.rw/",
     image: "/igatek.JPG",
     category: "Pro"
+  }, 
+{
+    name: "Unicash",
+    description: "Dashboard",
+    link: "",
+    image: "",
+    category: "Pro"
   },
   {
     name: "JSM Ecomerce",
