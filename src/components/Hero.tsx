@@ -64,7 +64,7 @@ const Hero = () => {
             </a>
             {/* Get CV Button */}
             <a
-              href="/CV.pdf"
+              href="/CV2.pdf"
               download
               className="flex items-center justify-center space-x-2 px-4 py-3 border border-blue-400 text-blue-400 font-bold rounded-full hover:text-white hover:bg-blue-400 w-full sm:w-auto"
             >
