@@ -13,12 +13,19 @@ const projects = [
     link: "https://iga.speclucs.rw/",
     image: "/igatek.JPG",
     category: "Pro"
-  }, 
+  },
+  {
+    name: "Uza bulk",
+    description: "E-commerce Platform",
+    link: "https://www.uzabulk.com/",
+    image: "/uza.PNG",
+    category: "Pro"
+  },
 {
     name: "Unicash",
     description: "Dashboard",
-    link: "",
-    image: "",
+    link: "https://unicash-beryl.vercel.app/",
+    image: "/unicash.PNG",
     category: "Pro"
   },
   {
