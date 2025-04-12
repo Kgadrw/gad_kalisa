@@ -1,9 +1,9 @@
-'use client'; // Ensure this is a client-side component
+'use client';
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Laptop, Factory, User, CalendarDays } from "lucide-react";
-import { useDarkMode } from '../components/darkmode'; // Import the dark mode context
+import { useDarkMode } from '../components/darkmode';
 
 // Experiences Data
 const experiences = [
@@ -31,7 +31,7 @@ const experiences = [
       "Stay up-to-date with emerging web technologies and design trends to implement innovative solutions."
     ]
   },
-    {
+  {
     role: "IT specialist",
     company: "Uza solution",
     duration: "April 2024 - Feb 2025",
@@ -41,7 +41,7 @@ const experiences = [
       "Troubleshoot and debug issues to ensure optimal functionality and performance of the website.",
       "Optimize web pages for speed and scalability, ensuring a seamless user experience across all devices.",
       "Integrate back-end services and APIs with front-end applications to enhance site functionality.",
-      "Worked closely with clients to gather requirements and deliver tailored website solutions",
+      "Worked closely with clients to gather requirements and deliver tailored website solutions"
     ]
   },
   {
@@ -57,8 +57,8 @@ const experiences = [
 ];
 
 const Experience = () => {
-  const [selectedExperience, setSelectedExperience] = useState<number>(0); // Set first experience as default
-  const { darkMode } = useDarkMode(); // Consume the dark mode context
+  const [selectedExperience, setSelectedExperience] = useState<number>(0); // First item as default
+  const { darkMode } = useDarkMode();
 
   return (
     <section
@@ -140,7 +140,9 @@ const Experience = () => {
                 <CalendarDays className="mr-2 text-blue-400" />
                 {experiences[selectedExperience].duration}
               </p>
-              <ul className="list-disc pl-6 text-gray-300 font-[Poppins] space-y-2">
+              <ul className={`list-disc pl-6 font-[Poppins] space-y-2 ${
+                darkMode ? 'text-gray-300' : 'text-gray-400'
+              }`}>
                 {experiences[selectedExperience].responsibilities.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
