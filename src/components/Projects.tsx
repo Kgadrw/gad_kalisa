@@ -24,7 +24,7 @@ const projects = [
 {
     name: "Unicash",
     description: "Dashboard",
-    link: "https://unicash-beryl.vercel.app/",
+    link: "https://unicash.vercel.app/",
     image: "/unicash.PNG",
     category: "Pro"
   },
