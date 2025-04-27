@@ -76,7 +76,7 @@ const projects = [
     name: "Uza bulk",
     description: "I handled everything solo — development and UI design for this e-commerce platform.",
     link: "https://www.uzabulk.com/",
-    image: "/bulk.PNG",
+    image: "/bullk.PNG",
     categories: ["Pro", "Self"]
   },
   {
