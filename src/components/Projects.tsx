@@ -82,7 +82,7 @@ const projects = [
   {
     name: "Unicash",
     description: "I built and designed this dashboard solo to help students manage their finances.",
-    link: "https://unicash-beryl.vercel.app/",
+    link: "https://unicash.vercel.app/",
     image: "/unicash.PNG",
     categories: ["Pro", "Self"]
   },
@@ -98,6 +98,13 @@ const projects = [
     description: "Solo project: Built and designed the platform to connect data-driven partners with businesses.",
     link: "https://3dp.rw/",
     image: "/3dp.JPG",
+    categories: ["Pro", "Self"]
+  },
+  {
+    name: "Uza solution",
+    description: "Solo project: i built it for uzasolution company.",
+    link: "https://uzasolution.vercel.app/",
+    image: "/uza.png",
     categories: ["Pro", "Self"]
   },
   {
