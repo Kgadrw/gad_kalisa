@@ -104,7 +104,7 @@ const projects = [
     name: "Uza solution",
     description: "Solo project: i built it for uzasolution company.",
     link: "https://uzasolution.vercel.app/",
-    image: "/uza.png",
+    image: "/uza.PNG",
     categories: ["Pro", "Self"]
   },
   {
