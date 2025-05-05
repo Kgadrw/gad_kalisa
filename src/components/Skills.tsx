@@ -1,56 +1,114 @@
-'use client'; // Ensure this is a client-side component
+'use client';
 
-import React from "react";
-import { motion } from "framer-motion";
-import { useDarkMode } from '../components/darkmode';  // Import the dark mode context
+import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useDarkMode } from '../components/darkmode';
+import styles from '../components/sass.css';
 
-// Skills Data
 const skills = [
-  { category: "Frontend Development", tools: ["HTML", "CSS", "JavaScript", "React", "Vue", "Sass", "Bootstrap", "Tailwind CSS", "Webpack"] },
-  { category: "UI/UX Design", tools: ["Figma", "Adobe XD", "Sketch", "InVision", "Zeplin", "Illustrator", "Photoshop"] },
-  { category: "Mobile Development", tools: ["React Native", "Flutter", "Swift", "Kotlin", "Xcode", "Android Studio"] }
+  {
+    category: "Frontend Development",
+    tools: ["HTML", "CSS", "JavaScript", "React", "Vue", "Sass", "Bootstrap", "Tailwind CSS", "Webpack"]
+  },
+  {
+    category: "UI/UX Design",
+    tools: ["Figma", "Adobe XD", "Sketch", "InVision", "Zeplin", "Illustrator", "Photoshop"]
+  },
+  {
+    category: "Mobile Development",
+    tools: ["React Native", "Flutter", "Swift", "Kotlin", "Xcode", "Android Studio"]
+  }
 ];
 
 const Skills = () => {
-  const { darkMode } = useDarkMode(); // Consume the dark mode context
+  const { darkMode } = useDarkMode();
 
   return (
     <section
-      className={`relative mx-auto px-6 md:px-12 lg:px-32 py-12 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}
-      style={{ backgroundImage: 'url(/.png)' }}
+      className={`relative mx-auto px-6 md:px-12 lg:px-32 py-12 overflow-hidden ${styles.sectionBg} ${
+        darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'
+      }`}
     >
-      <h2 className={`text-4xl md:text-6xl font-bold font-[Poppins] ${darkMode ? 'text-white' : 'text-gray-900'} mb-6 text-center md:text-left`}>
+      <h2
+        className={`text-4xl md:text-6xl font-bold font-[Poppins] mb-6 text-center md:text-left ${
+          darkMode ? 'text-white' : 'text-gray-900'
+        }`}
+      >
         Skills
       </h2>
-      
-      {/* Skills Grid Container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {skills.map((category, index) => (
-          <motion.div
-            key={index}
-            className={`p-4 border rounded-lg ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-100 border-gray-200'}`}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-          >
-            <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} mb-3 text-center md:text-left`}>
-              {category.category}
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 justify-center">
-              {category.tools.map((tool, i) => (
-                <motion.div
-                  key={i}
-                  className={`p-2 text-xs text-center rounded-full ${darkMode ? 'bg-blue-500 text-white' : 'bg-blue-400 text-white'}`}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  {tool}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {skills.map((category, index) => {
+          const ref = useRef(null);
+          const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+          const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+          const handleMouseMove = (e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const midX = rect.width / 2;
+            const midY = rect.height / 2;
+
+            const rotateY = ((x - midX) / midX) * 10;
+            const rotateX = -((y - midY) / midY) * 10;
+            setRotate({ x: rotateX, y: rotateY });
+          };
+
+          const handleMouseLeave = () => {
+            setRotate({ x: 0, y: 0 });
+          };
+
+          return (
+            <motion.div
+              key={index}
+              ref={ref}
+              className={`${styles.card} p-6 border rounded-2xl shadow-xl transition-transform duration-1000 ${
+                darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
+              }`}
+              initial={{ rotateX: -90, opacity: 0, scale: 0.8 }}
+              animate={isInView ? { rotateX: 0, opacity: 1, scale: 1 } : {}}
+              transition={{
+                duration: 1,
+                delay: index * 0.3,
+                type: "spring",
+                stiffness: 40,
+              }}
+              style={{
+                transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+              }}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              whileHover={{ scale: 1.03 }}
+            >
+              <h3 className="text-lg font-bold mb-4 text-center md:text-left font-[Poppins]">
+                {category.category}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {category.tools.map((tool, i) => (
+                  <motion.div
+                    key={i}
+                    className={`${styles.bubble} p-2 text-xs font-medium text-center rounded-full ${
+                      darkMode ? 'bg-blue-500 text-white' : 'bg-blue-400 text-white'
+                    }`}
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={isInView ? { y: 0, opacity: 1 } : {}}
+                    transition={{
+                      duration: 0.6,
+                      delay: i * 0.05,
+                      type: "spring",
+                      stiffness: 60,
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {tool}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
