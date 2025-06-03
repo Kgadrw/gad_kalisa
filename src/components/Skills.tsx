@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDarkMode } from '../components/darkmode';
 import { X } from "lucide-react";
-import styles from '../components/sass.css';
 
 const galleryImages = [
   "/image (1).jpeg",
@@ -13,8 +12,6 @@ const galleryImages = [
   "/image (2).jpg",
   "/image (3).jpg",
   "/image (4).jpg",
-  
-
 ];
 
 const Gallery = () => {
@@ -23,12 +20,12 @@ const Gallery = () => {
 
   return (
     <section
-      className={`relative mx-auto px-6 md:px-12 lg:px-32 py-16 ${styles.sectionBg} ${
+      className={`relative mx-auto px-6 md:px-12 lg:px-32 py-16 ${
         darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'
       }`}
     >
       <h2 className="text-4xl md:text-6xl font-bold font-[Poppins] mb-12 text-center">
-       Graphics Gallery
+        Graphics Gallery
       </h2>
 
       {/* Masonry layout using columns */}
@@ -66,7 +63,7 @@ const Gallery = () => {
               <motion.img
                 src={selectedImage}
                 alt="Selected artwork"
-                className="w-full max-h-[80vh] object-contain rounded-lg"
+                className="w-full max-h-[80vh] object-contain"
                 initial={{ scale: 0.95 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.95 }}
