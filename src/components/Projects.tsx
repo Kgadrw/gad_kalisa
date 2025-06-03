@@ -139,37 +139,52 @@ const projects = [
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web");
   const [modalImages, setModalImages] = useState<string[] | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const { darkMode } = useDarkMode();
 
   const filteredProjects = projects.filter(project =>
     project.categories.includes(selectedCategory)
   );
 
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
+
   return (
     <section className={`relative mx-auto py-12 px-6 sm:px-12 md:px-24 lg:px-32 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'}`}>
       <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-        <h2 className="text-4xl sm:text-5xl font-bold font-[Poppins]">Projects</h2>
-        <span className="font-[Poppins] font-semibold mt-2 sm:mt-0 hidden sm:inline">Total: {filteredProjects.length}</span>
-      </div>
-
-      <div className="mb-10 flex justify-center gap-6">
-        {["Web", "UI/UX"].map(category => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-6 py-3 text-lg font-bold font-[Poppins] rounded-xl transition duration-300 border-2 ${
-              selectedCategory === category
-                ? 'bg-blue-600 text-white border-blue-600'
-                : 'bg-transparent text-gray-700 border-gray-400 hover:border-blue-400 hover:text-blue-600'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+        <div>
+          <h2 className="text-4xl sm:text-5xl font-bold font-[Poppins]">Projects</h2>
+          <span className="block font-[Poppins] font-semibold mt-1 text-sm">Total: {filteredProjects.length}</span>
+          {filteredProjects.length > 3 && (
+            <button
+              onClick={() => setShowAll(prev => !prev)}
+              className="mt-1 text-sm text-blue-500 hover:underline font-[Poppins]"
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </button>
+          )}
+        </div>
+        <div className="mt-4 sm:mt-0 flex gap-4">
+          {["Web", "UI/UX"].map(category => (
+            <button
+              key={category}
+              onClick={() => {
+                setSelectedCategory(category);
+                setShowAll(false); // reset when switching
+              }}
+              className={`px-6 py-2 text-sm font-bold font-[Poppins] rounded-xl transition duration-300 border-2 ${
+                selectedCategory === category
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'bg-transparent text-gray-700 border-gray-400 hover:border-blue-400 hover:text-blue-600'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <Tilt
             glareEnable={true}
             glareMaxOpacity={0.3}

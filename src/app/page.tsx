@@ -16,8 +16,8 @@ const page = () => {
       <Navbar />
       <Hero />
       <Experience />
-      <Skills />
       <Projects />
+      <Skills />
       <Contact />
       <Footer />
     </div>
