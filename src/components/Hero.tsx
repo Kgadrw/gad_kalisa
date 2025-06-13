@@ -4,6 +4,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Phone, Mail, Linkedin, Github, Gitlab, Twitter, CloudUpload } from 'lucide-react';
 import { useDarkMode } from '../components/darkmode';  // Import the dark mode context
+import Image from 'next/image';
 
 const Hero = () => {
   const { darkMode } = useDarkMode(); // Consume the dark mode context
@@ -49,7 +50,7 @@ const Hero = () => {
           </div>
 
           <p className={`mt-4 text-center md:text-left ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            Hi, I'm Gad Kalisa — a certified UI/UX Designer and Full-Stack Developer with 2 years of experience. I'm passionate about tech and love building cool, responsive, and user-friendly web apps using tools like HTML, CSS, JavaScript, React.js, and backend technologies. I focus on delivering seamless user experiences from design to deployment
+            I&apos;m a passionate full-stack developer with a keen eye for design. I love creating beautiful, functional websites and applications that make a difference. Let&apos;s build something amazing together!
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
@@ -82,11 +83,15 @@ const Hero = () => {
 
         {/* Hero Image - Hidden on Mobile */}
         <div className="hidden md:flex md:w-1/2 justify-center md:justify-end mt-8 md:mt-0">
-          <img
-            src="/profile.png"
-            alt="Profile"
-            className={`w-40 md:w-2/3 max-w-xs rounded-full object-contain aspect-square border-4 border-blue-500 bg-blue-400 border-dotted ${darkMode ? 'bg-gray-900' : 'bg-blue-400'}`}
-          />
+          <div className="relative w-64 h-64 mx-auto md:mx-0">
+            <Image
+              src="/profile.jpg"
+              alt="Gad Kalisa"
+              fill
+              className="rounded-full object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

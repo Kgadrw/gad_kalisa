@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { useDarkMode } from '../components/darkmode'; // Import the dark mode context
+import Image from 'next/image';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -141,7 +142,15 @@ const Contact: React.FC = () => {
           )}
         </div>
         <div className="hidden sm:block w-full h-full flex justify-center items-center">
-          <img src="/ban.png" alt="Banner" className="max-w-full h-auto rounded-lg" />
+          <div className="relative w-full h-48">
+            <Image
+              src="/ban.png"
+              alt="Banner"
+              fill
+              className="object-cover rounded-lg"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
