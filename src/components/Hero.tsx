@@ -26,7 +26,7 @@ const Hero = () => {
           </h1>
           <TypeAnimation
             sequence={[
-              "I am a Frontend Developer", 1000,
+              "I am a Fullstack Developer", 1000,
               "UI/UX Designer", 1000,
               "Mobile Developer", 1000,
             ]}
@@ -49,9 +49,7 @@ const Hero = () => {
           </div>
 
           <p className={`mt-4 text-center md:text-left ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            I am Gad Kalisa, a certified UI/UX Designer and Front-End Developer skilled in HTML, CSS, JavaScript, and React.js. I specialize in
-            creating responsive websites and user-friendly designs using tools like Figma and Adobe XD, delivering seamless
-            user experiences and efficient web solutions.
+            Hi, I'm Gad Kalisa — a certified UI/UX Designer and Full-Stack Developer with 2 years of experience. I'm passionate about tech and love building cool, responsive, and user-friendly web apps using tools like HTML, CSS, JavaScript, React.js, and backend technologies. I focus on delivering seamless user experiences from design to deployment
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">

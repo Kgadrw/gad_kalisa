@@ -76,63 +76,88 @@ const projects = [
     description: "Self project: I built and designed the entire UI. Platform helps locals access digital literacy.",
     link: "https://iga.speclucs.rw/",
     image: "/igatek.JPG",
-    categories: ["Web"]
+    categories: ["Web"],
+    createdAt: "2024-03-15"
   },
   {
     name: "Uza bulk",
     description: "I handled everything solo — development and UI design for this e-commerce platform.",
     link: "https://www.uzabulk.com/",
     image: "/bullk.PNG",
-    categories: ["Web"]
+    categories: ["Web"],
+    createdAt: "2024-02-20"
   },
   {
     name: "Unicash",
     description: "I built and designed this dashboard solo to help students manage their finances.",
     link: "https://unicash.vercel.app/",
     image: "/unicash.PNG",
-    categories: ["Web"]
+    categories: ["Web"],
+    createdAt: "2024-01-10"
   },
   {
     name: "JSM Ecomerce",
     description: "Full-stack e-commerce app with full UI design — all done by me alone.",
     link: "https://ecommerce-seven-kappa-12.vercel.app/",
     image: "/jsm.JPG",
-    categories: ["Web"]
+    categories: ["Web"],
+    createdAt: "2023-12-05"
   },
   {
     name: "Data driven partners",
     description: "Solo project: Built and designed the platform to connect data-driven partners with businesses.",
     link: "https://3dp.rw/",
     image: "/3dp.JPG",
-    categories: ["Web"]
+    categories: ["Web"],
+    createdAt: "2023-11-15"
   },
   {
     name: "Uza solution",
     description: "Solo project: i built it for uzasolution company.",
     link: "https://uzasolution.vercel.app/",
     image: "/uza.PNG",
-    categories: ["Web"]
+    categories: ["Web"],
+    createdAt: "2023-10-20"
+  },
+  {
+    name: "IGA TEK New version",
+    description: "Solo project: i built it for Igatek company.",
+    link: "https://iga-tek-connect.vercel.app/",
+    image: "/iga.JPG",
+    categories: ["Web"],
+    createdAt: "2023-09-25"
   },
   {
     name: "Figma Mockup - Dashboard",
     description: "Clean and responsive UI mockup for Dashboard.",
     link: "#",
     image: "/1.png",
-    categories: ["UI/UX"]
+    categories: ["UI/UX"],
+    createdAt: "2023-08-15"
   },
   {
     name: "Figma Mockup - Dashboard",
-    description: "Dashboard UI mockup with a focus on data visualization.",
+    description: "Clean and responsive UI mockup for Dashboard.",
     link: "#",
-    images: ["/2.png", "/3.png"],
-    categories: ["UI/UX"]
+    image: "/1.png",
+    categories: ["UI/UX"],
+    createdAt: "2023-07-20"
+  },
+  {
+    name: "Insurer Admin Dashboard",
+    description: "Dashboard UI mockup with a focus on data visualization. And also i built it for a client. with visualization and charts . visit it to see it",
+    link: "https://insurer-admin-dashboard.vercel.app/",
+    images: ["farm.JPG"],
+    categories: ["UI/UX"],
+    createdAt: "2023-06-10"
   },
   {
     name: "Figma Mockup - Dashboard",
     description: "Responsive UI mockup for a dashboard with a modern design.",
     link: "#",
     image: "/4.png",
-    categories: ["UI/UX"]
+    categories: ["UI/UX"],
+    createdAt: "2023-05-15"
   }
 ];
 
@@ -214,9 +239,14 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold font-[Poppins] mb-2">{project.name}</h3>
                 <p className="text-sm font-[Poppins] mb-4">{project.description}</p>
                 <div className="flex justify-between items-center">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline font-[Poppins] text-sm">
-                    View Project
-                  </a>
+                  <div className="flex flex-col">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline font-[Poppins] text-sm">
+                      View Project
+                    </a>
+                    <span className="text-xs text-gray-500 font-[Poppins] mt-1">
+                      Created: {new Date(project.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </span>
+                  </div>
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
                     <Github size={20} className="text-blue-400" />
                   </a>
