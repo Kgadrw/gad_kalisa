@@ -83,12 +83,13 @@ const Hero = () => {
 
         {/* Hero Image - Hidden on Mobile */}
         <div className="hidden md:flex md:w-1/2 justify-center md:justify-end mt-8 md:mt-0">
-          <div className="relative w-64 h-64 mx-auto md:mx-0">
+          <div className="relative w-80 h-80 mx-auto md:mx-0">
             <Image
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Gad Kalisa"
-              fill
-              className="rounded-full object-cover"
+              width={320}
+              height={320}
+              className="rounded-full object-cover border-4 border-blue-400"
               priority
             />
           </div>

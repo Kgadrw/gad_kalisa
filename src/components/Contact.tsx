@@ -142,12 +142,13 @@ const Contact: React.FC = () => {
           )}
         </div>
         <div className="hidden sm:block w-full h-full flex justify-center items-center">
-          <div className="relative w-full h-48">
+          <div className="relative w-full h-96">
             <Image
               src="/ban.png"
               alt="Banner"
-              fill
-              className="object-cover rounded-lg"
+              width={500}
+              height={400}
+              className="object-contain rounded-lg"
               priority
             />
           </div>
