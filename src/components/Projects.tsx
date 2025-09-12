@@ -70,14 +70,34 @@ const Modal = ({ images, onClose }: { images: string[], onClose: () => void }) =
   );
 };
 
-const projects = [
+// --- Pro Projects ---
+const proProjects = [
   {
-    name: "IgaTek",
-    description: "Self project: I built and designed the entire UI. Platform helps locals access digital literacy.",
-    link: "https://iga.speclucs.rw/",
-    image: "/igatek.JPG",
+    name: "IGA TEK New version",
+    description: "Solo project: I built it for Igatek company.",
+    link: "https://iga-tek-connect.vercel.app/",
+    image: "/iga.JPG",
     categories: ["Web"],
-    createdAt: "2024-03-15"
+    createdAt: "2023-09-25",
+    pro: true
+  },
+  {
+    name: "Data driven partners",
+    description: "Solo project: Built and designed the platform to connect data-driven partners with businesses.",
+    link: "https://3dp.rw/",
+    image: "/3dp.JPG",
+    categories: ["Web"],
+    createdAt: "2023-11-15",
+    pro: true
+  },
+  {
+    name: "Uza solution",
+    description: "Solo project: I built it for Uza Solution company.",
+    link: "https://uzasolution.vercel.app/",
+    image: "/uza.PNG",
+    categories: ["Web"],
+    createdAt: "2023-10-20",
+    pro: true
   },
   {
     name: "Uza bulk",
@@ -85,7 +105,20 @@ const projects = [
     link: "https://www.uzabulk.com/",
     image: "/bullk.PNG",
     categories: ["Web"],
-    createdAt: "2024-02-20"
+    createdAt: "2024-02-20",
+    pro: true
+  }
+];
+
+// --- Other Projects ---
+const otherProjects = [
+  {
+    name: "IgaTek",
+    description: "Self project: I built and designed the entire UI. Platform helps locals access digital literacy.",
+    link: "https://iga.speclucs.rw/",
+    image: "/igatek.JPG",
+    categories: ["Web"],
+    createdAt: "2024-03-15"
   },
   {
     name: "Unicash",
@@ -102,30 +135,6 @@ const projects = [
     image: "/jsm.JPG",
     categories: ["Web"],
     createdAt: "2023-12-05"
-  },
-  {
-    name: "Data driven partners",
-    description: "Solo project: Built and designed the platform to connect data-driven partners with businesses.",
-    link: "https://3dp.rw/",
-    image: "/3dp.JPG",
-    categories: ["Web"],
-    createdAt: "2023-11-15"
-  },
-  {
-    name: "Uza solution",
-    description: "Solo project: i built it for uzasolution company.",
-    link: "https://uzasolution.vercel.app/",
-    image: "/uza.PNG",
-    categories: ["Web"],
-    createdAt: "2023-10-20"
-  },
-  {
-    name: "IGA TEK New version",
-    description: "Solo project: i built it for Igatek company.",
-    link: "https://iga-tek-connect.vercel.app/",
-    image: "/iga.JPG",
-    categories: ["Web"],
-    createdAt: "2023-09-25"
   },
   {
     name: "Figma Mockup - Dashboard",
@@ -145,7 +154,7 @@ const projects = [
   },
   {
     name: "Insurer Admin Dashboard",
-    description: "Dashboard UI mockup with a focus on data visualization. And also i built it for a client. with visualization and charts . visit it to see it",
+    description: "Dashboard UI mockup with a focus on data visualization. Built for a client with charts.",
     link: "https://insurer-admin-dashboard.vercel.app/",
     images: ["farm.JPG"],
     categories: ["UI/UX"],
@@ -160,6 +169,9 @@ const projects = [
     createdAt: "2023-05-15"
   }
 ];
+
+// Combine with Pro ones at top
+const projects = [...proProjects, ...otherProjects];
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web");
@@ -177,12 +189,12 @@ const Projects = () => {
     <section className={`relative mx-auto py-12 px-6 sm:px-12 md:px-24 lg:px-32 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'}`}>
       <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center">
         <div>
-          <h2 className="text-4xl sm:text-5xl font-bold font-[Poppins]">Projects</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold ">Projects</h2>
           <span className="block font-[Poppins] font-semibold mt-1 text-sm">Total: {filteredProjects.length}</span>
           {filteredProjects.length > 3 && (
             <button
               onClick={() => setShowAll(prev => !prev)}
-              className="mt-1 text-sm text-blue-500 hover:underline font-[Poppins]"
+              className="mt-1 text-sm text-blue-500 hover:underline "
             >
               {showAll ? "Show Less" : "Show More"}
             </button>
@@ -194,9 +206,9 @@ const Projects = () => {
               key={category}
               onClick={() => {
                 setSelectedCategory(category);
-                setShowAll(false); // reset when switching
+                setShowAll(false);
               }}
-              className={`px-6 py-2 text-sm font-bold font-[Poppins] rounded-xl transition duration-300 border-2 ${
+              className={`px-6 py-2 text-sm font-bold  rounded-xl transition duration-300 border-2 ${
                 selectedCategory === category
                   ? 'bg-blue-600 text-white border-blue-600'
                   : 'bg-transparent text-gray-700 border-gray-400 hover:border-blue-400 hover:text-blue-600'
@@ -236,14 +248,21 @@ const Projects = () => {
                 />
               )}
               <div className="p-5">
-                <h3 className="text-xl font-semibold font-[Poppins] mb-2">{project.name}</h3>
-                <p className="text-sm font-[Poppins] mb-4">{project.description}</p>
+                <div className="flex justify-between items-start">
+                  <h3 className="text-xl font-semibold font-[Poppins] mb-2">{project.name}</h3>
+                  {project.pro && (
+                    <span className="bg-yellow-400 text-xs font-bold text-black px-2 py-1 rounded-md">
+                      PRO
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm  mb-4">{project.description}</p>
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col">
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline font-[Poppins] text-sm">
                       View Project
                     </a>
-                    <span className="text-xs text-gray-500 font-[Poppins] mt-1">
+                    <span className="text-xs text-gray-500  mt-1">
                       Created: {new Date(project.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
                   </div>
