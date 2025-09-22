@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Github, X } from "lucide-react";
 import { useDarkMode } from '../components/darkmode';
 import Tilt from 'react-parallax-tilt';
+import { projects } from '../data/projects';
+import Link from 'next/link';
 
 const Carousel = ({ images, onClick }: { images: string[], onClick?: () => void }) => {
   const [index, setIndex] = useState(0);
@@ -17,7 +19,7 @@ const Carousel = ({ images, onClick }: { images: string[], onClick?: () => void 
   }, [images.length]);
 
   return (
-    <div onClick={onClick} className="w-full h-48 overflow-hidden rounded-t-xl relative cursor-pointer">
+    <div onClick={onClick} className="w-full h-64 overflow-hidden relative cursor-pointer">
       <AnimatePresence initial={false}>
         <motion.img
           key={images[index]}
@@ -70,108 +72,6 @@ const Modal = ({ images, onClose }: { images: string[], onClose: () => void }) =
   );
 };
 
-// --- Pro Projects ---
-const proProjects = [
-  {
-    name: "IGA TEK New version",
-    description: "Solo project: I built it for Igatek company.",
-    link: "https://iga-tek-connect.vercel.app/",
-    image: "/iga.JPG",
-    categories: ["Web"],
-    createdAt: "2023-09-25",
-    pro: true
-  },
-  {
-    name: "Data driven partners",
-    description: "Solo project: Built and designed the platform to connect data-driven partners with businesses.",
-    link: "https://3dp.rw/",
-    image: "/3dp.JPG",
-    categories: ["Web"],
-    createdAt: "2023-11-15",
-    pro: true
-  },
-  {
-    name: "Uza solution",
-    description: "Solo project: I built it for Uza Solution company.",
-    link: "https://uzasolution.vercel.app/",
-    image: "/uza.PNG",
-    categories: ["Web"],
-    createdAt: "2023-10-20",
-    pro: true
-  },
-  {
-    name: "Uza bulk",
-    description: "I handled everything solo — development and UI design for this e-commerce platform.",
-    link: "https://www.uzabulk.com/",
-    image: "/bullk.PNG",
-    categories: ["Web"],
-    createdAt: "2024-02-20",
-    pro: true
-  }
-];
-
-// --- Other Projects ---
-const otherProjects = [
-  {
-    name: "IgaTek",
-    description: "Self project: I built and designed the entire UI. Platform helps locals access digital literacy.",
-    link: "https://iga.speclucs.rw/",
-    image: "/igatek.JPG",
-    categories: ["Web"],
-    createdAt: "2024-03-15"
-  },
-  {
-    name: "Unicash",
-    description: "I built and designed this dashboard solo to help students manage their finances.",
-    link: "https://unicash.vercel.app/",
-    image: "/unicash.PNG",
-    categories: ["Web"],
-    createdAt: "2024-01-10"
-  },
-  {
-    name: "JSM Ecomerce",
-    description: "Full-stack e-commerce app with full UI design — all done by me alone.",
-    link: "https://ecommerce-seven-kappa-12.vercel.app/",
-    image: "/jsm.JPG",
-    categories: ["Web"],
-    createdAt: "2023-12-05"
-  },
-  {
-    name: "Figma Mockup - Dashboard",
-    description: "Clean and responsive UI mockup for Dashboard.",
-    link: "#",
-    image: "/1.png",
-    categories: ["UI/UX"],
-    createdAt: "2023-08-15"
-  },
-  {
-    name: "Figma Mockup - Dashboard",
-    description: "Clean and responsive UI mockup for Dashboard.",
-    link: "#",
-    image: "/1.png",
-    categories: ["UI/UX"],
-    createdAt: "2023-07-20"
-  },
-  {
-    name: "Insurer Admin Dashboard",
-    description: "Dashboard UI mockup with a focus on data visualization. Built for a client with charts.",
-    link: "https://insurer-admin-dashboard.vercel.app/",
-    images: ["farm.JPG"],
-    categories: ["UI/UX"],
-    createdAt: "2023-06-10"
-  },
-  {
-    name: "Figma Mockup - Dashboard",
-    description: "Responsive UI mockup for a dashboard with a modern design.",
-    link: "#",
-    image: "/4.png",
-    categories: ["UI/UX"],
-    createdAt: "2023-05-15"
-  }
-];
-
-// Combine with Pro ones at top
-const projects = [...proProjects, ...otherProjects];
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web");
@@ -183,97 +83,126 @@ const Projects = () => {
     project.categories.includes(selectedCategory)
   );
 
-  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   return (
-    <section className={`relative mx-auto py-12 px-6 sm:px-12 md:px-24 lg:px-32 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'}`}>
-      <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-        <div>
-          <h2 className="text-4xl sm:text-5xl font-bold ">Projects</h2>
-          <span className="block font-[Poppins] font-semibold mt-1 text-sm">Total: {filteredProjects.length}</span>
-          {filteredProjects.length > 3 && (
-            <button
-              onClick={() => setShowAll(prev => !prev)}
-              className="mt-1 text-sm text-blue-500 hover:underline "
-            >
-              {showAll ? "Show Less" : "Show More"}
-            </button>
-          )}
-        </div>
-        <div className="mt-4 sm:mt-0 flex gap-4">
-          {["Web", "UI/UX"].map(category => (
-            <button
-              key={category}
-              onClick={() => {
-                setSelectedCategory(category);
-                setShowAll(false);
-              }}
-              className={`px-6 py-2 text-sm font-bold  rounded-xl transition duration-300 border-2 ${
-                selectedCategory === category
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-transparent text-gray-700 border-gray-400 hover:border-blue-400 hover:text-blue-600'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+    <section id="works" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-left mb-12"
+        >
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+            Our Works
+          </h2>
+          <p className="text-sm text-gray-600 max-w-2xl mb-6">
+            Explore our portfolio of successful projects and see how we've helped businesses grow through digital innovation.
+          </p>
+          
+          {/* Category Filter */}
+          <div className="flex gap-3 mb-8">
+            {["Web", "UI/UX"].map(category => (
+              <motion.button
+                key={category}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setSelectedCategory(category);
+                  setShowAll(false);
+                }}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                  selectedCategory === category
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {visibleProjects.map((project, index) => (
-          <Tilt
-            glareEnable={true}
-            glareMaxOpacity={0.3}
-            scale={1.05}
-            transitionSpeed={250}
-            tiltMaxAngleX={10}
-            tiltMaxAngleY={10}
-            key={index}
-          >
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {visibleProjects.map((project, index) => (
             <motion.div
-              className={`overflow-hidden border rounded-xl shadow-lg ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-300'}`}
-              initial={{ opacity: 0, y: 50 }}
+              key={project.id}
+              className="group"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {project.images ? (
-                <Carousel images={project.images} onClick={() => setModalImages(project.images)} />
-              ) : (
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-48 object-cover rounded-t-xl cursor-pointer"
-                  onClick={() => setModalImages([project.image])}
-                />
-              )}
-              <div className="p-5">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-xl font-semibold font-[Poppins] mb-2">{project.name}</h3>
+              <Link href={`/projects/${project.id}`}>
+                {/* Project Image */}
+                <div className="relative h-64 overflow-hidden rounded-lg mb-4">
+                  {project.images && project.images.length > 0 ? (
+                    <Carousel images={project.images} onClick={() => setModalImages(project.images!)} />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-300"
+                      onClick={() => setModalImages([project.image])}
+                    />
+                  )}
                   {project.pro && (
-                    <span className="bg-yellow-400 text-xs font-bold text-black px-2 py-1 rounded-md">
-                      PRO
-                    </span>
+                    <div className="absolute top-3 right-3">
+                      <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                        PRO
+                      </span>
+                    </div>
                   )}
                 </div>
-                <p className="text-sm  mb-4">{project.description}</p>
-                <div className="flex justify-between items-center">
-                  <div className="flex flex-col">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline font-[Poppins] text-sm">
-                      View Project
-                    </a>
-                    <span className="text-xs text-gray-500  mt-1">
-                      Created: {new Date(project.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                    </span>
-                  </div>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <Github size={20} className="text-blue-400" />
-                  </a>
+                
+                {/* Project Name */}
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    {project.name}
+                  </h3>
                 </div>
-              </div>
+              </Link>
             </motion.div>
-          </Tilt>
-        ))}
+          ))}
+        </div>
+
+        {/* Show More/Less Button */}
+        {filteredProjects.length > 6 && (
+          <div className="text-center mt-12">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowAll(prev => !prev)}
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              {showAll ? "Show Less" : "See Portfolio"}
+            </motion.button>
+          </div>
+        )}
+
+        {/* CTA Section */}
+        <div className="mt-20 text-center">
+          <div className="inline-block p-8 rounded-2xl bg-gray-50">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Ready to start your project?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Let's discuss how we can help bring your ideas to life.
+            </p>
+            <a
+              href="mailto:kalisagad05@gmail.com"
+              className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Get a Free Quote
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
 
       {modalImages && <Modal images={modalImages} onClose={() => setModalImages(null)} />}

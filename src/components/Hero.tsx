@@ -1,99 +1,126 @@
-'use client';  // Ensure this is a client-side component
+'use client';
 
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import { Phone, Mail, Linkedin, Github, Gitlab, Twitter, CloudUpload } from 'lucide-react';
-import { useDarkMode } from '../components/darkmode';  // Import the dark mode context
+import { Phone, Mail, Linkedin, Github, Gitlab, Twitter, CloudUpload, ArrowRight } from 'lucide-react';
+import { useDarkMode } from '../components/darkmode';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const Hero = () => {
-  const { darkMode } = useDarkMode(); // Consume the dark mode context
+  const { darkMode } = useDarkMode();
 
   return (
-    <section
-      className={`flex items-center justify-center min-h-screen px-6 md:px-12 lg:px-32  ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}
-      style={{
-        backgroundImage: 'url(/.png)',
-        backgroundPosition: 'bottom',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-      }}
-    >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center w-full">
-        {/* Hero Text Content */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h1 className={`text-4xl md:text-6xl font-extrabold leading-tight mb-4 font-[Poppins] ${darkMode ? 'text-white' : 'text-gray-600'}`}>
-            Hello, I am Gad Kalisa
-          </h1>
-          <TypeAnimation
-            sequence={[
-              "I am a Fullstack Developer", 1000,
-              "UI/UX Designer", 1000,
-              "Mobile Developer", 1000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className={`text-2xl md:text-3xl font-extrabold font-[Poppins] ${darkMode ? 'text-blue-400' : 'text-blue-400'}`}
-          />
-          
-          {/* Contact Information */}
-          <div className="mt-6 space-y-2">
-            <div className="flex items-center justify-center md:justify-start space-x-2">
-              <Phone className={darkMode ? 'text-blue-400' : 'text-blue-400'} />
-              <span>0791998365</span>
-            </div>
-            <div className="flex items-center justify-center md:justify-start space-x-2">
-              <Mail className={darkMode ? 'text-blue-400' : 'text-blue-400'} />
-              <span>kalisagad05@gmail.com</span>
-            </div>
-          </div>
+    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      {/* Gradient Grid Background */}
+      <div className="absolute inset-0">
+        {/* Vertical Lines */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to right, ${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)`,
+          backgroundSize: '60px 100%',
+          maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+        }} />
+        {/* Horizontal Lines */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to bottom, ${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)`,
+          backgroundSize: '100% 60px',
+          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+        }} />
+      </div>
 
-          <p className={`mt-4 text-center md:text-left ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            I&apos;m a passionate full-stack developer with a keen eye for design. I love creating beautiful, functional websites and applications that make a difference. Let&apos;s build something amazing together!
-          </p>
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
+        >
+          <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full">
+            Full-Stack Developer & UI/UX Designer
+          </span>
+        </motion.div>
+        
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl lg:text-6xl font-bold leading-tight mb-6"
+        >
+          <span className="block text-gray-900 dark:text-white">We are shaping the future</span>
+          <span className="block gradient-text">through digital innovation</span>
+        </motion.h1>
 
-          <div className="mt-4 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-            {/* Hire me Button */}
-            <a
-              href="mailto:kalisagad05@gmail.com"
-              className="px-4 py-3 bg-blue-400 text-white font-bold rounded-full hover:bg-gray-50 border border-blue-400 hover:text-blue-400 w-full sm:w-auto"
-            >
-              Hire me
-            </a>
-            {/* Get CV Button */}
-            <a
-              href="/CV2.pdf"
-              download
-              className="flex items-center justify-center space-x-2 px-4 py-3 border border-blue-400 text-blue-400 font-bold rounded-full hover:text-white hover:bg-blue-400 w-full sm:w-auto"
-            >
-              <CloudUpload className="w-5 h-5" />
-              <span>Get my CV</span>
-            </a>
-          </div>
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
+        >
+          I&apos;m a passionate full-stack developer with a keen eye for design. I love creating beautiful, functional websites and applications that make a difference.
+        </motion.p>
 
-          {/* Social Media Icons */}
-          <div className="mt-8 flex justify-center md:justify-start space-x-4 text-white text-2xl">
-            <a href="https://gitlab.com/kalisagad05" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Gitlab /></a>
-            <a href="https://x.com/gadkalisa05" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Twitter /></a>
-            <a href="https://github.com/Kgadrw" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Github /></a>
-            <a href="https://linkedin.com/in/gad-kalisa-2aa319333/" className="bg-blue-400 border border-blue-400 rounded-full p-2"><Linkedin /></a>
-          </div>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 mb-10 justify-center"
+        >
+          <a
+            href="mailto:kalisagad05@gmail.com"
+            className="group inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:rotate-1"
+          >
+            Start a Project
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="/CV2.pdf"
+            download
+            className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-rotate-1"
+          >
+            <CloudUpload className="mr-2 w-4 h-4" />
+            Download CV
+          </a>
+        </motion.div>
 
-        {/* Hero Image - Hidden on Mobile */}
-        <div className="hidden md:flex md:w-1/2 justify-center md:justify-end mt-8 md:mt-0">
-          <div className="relative w-80 h-80 mx-auto md:mx-0">
-            <Image
-              src="/profile.png"
-              alt="Gad Kalisa"
-              width={320}
-              height={320}
-              className="rounded-full object-cover border-4 border-blue-400"
-              priority
-            />
+        {/* Contact Info */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-6 text-sm text-gray-600 dark:text-gray-300 justify-center mb-8"
+        >
+          <div className="flex items-center justify-center">
+            <Phone className="w-4 h-4 mr-2 text-blue-600" />
+            <span>+250 791 998 365</span>
           </div>
-        </div>
+          <div className="flex items-center justify-center">
+            <Mail className="w-4 h-4 mr-2 text-blue-600" />
+            <span>kalisagad05@gmail.com</span>
+          </div>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="flex justify-center space-x-3"
+        >
+          <a href="https://github.com/Kgadrw" className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+            <Github className="w-4 h-4" />
+          </a>
+          <a href="https://linkedin.com/in/gad-kalisa-2aa319333/" className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-rotate-12">
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a href="https://x.com/gadkalisa05" className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+            <Twitter className="w-4 h-4" />
+          </a>
+          <a href="https://gitlab.com/kalisagad05" className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:-rotate-12">
+            <Gitlab className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

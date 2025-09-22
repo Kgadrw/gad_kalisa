@@ -1,8 +1,6 @@
-// app/dashboard/layout.tsx (or .js)
-import { DarkModeProvider } from '../components/darkmode'; // Adjust path as necessary
-import Navbar from '../components/Navbar'; // Adjust path as necessary
+import { DarkModeProvider } from '../components/darkmode';
 
-export default function DashboardLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -10,12 +8,8 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body>
-        {/* Wrap the layout content with DarkModeProvider */}
         <DarkModeProvider>
-          {/* Layout UI, including Navbar or other shared components */}
-          <Navbar />
-          {/* Main content */}
-          <main>{children}</main>
+          {children}
         </DarkModeProvider>
       </body>
     </html>
