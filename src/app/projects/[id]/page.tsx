@@ -36,7 +36,7 @@ const ProjectPage = () => {
       <Navbar />
       {/* Header */}
       <div className="bg-gray-50 py-8 pt-20">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <Link 
             href="/#works" 
             className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6 transition-colors"

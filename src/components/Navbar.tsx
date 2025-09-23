@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useDarkMode } from '../components/darkmode';
 import Link from 'next/link';
 
 const Navbar = () => {
