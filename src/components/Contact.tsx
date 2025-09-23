@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { useDarkMode } from '../components/darkmode'; // Import the dark mode context
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });

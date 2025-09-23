@@ -2,11 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, X } from "lucide-react";
-import { useDarkMode } from '../components/darkmode';
-import Tilt from 'react-parallax-tilt';
-import { projects } from '../data/projects';
+import { X } from "lucide-react";
+import { projects } from '@/data/projects';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Carousel = ({ images, onClick }: { images: string[], onClick?: () => void }) => {
   const [index, setIndex] = useState(0);
@@ -21,16 +20,13 @@ const Carousel = ({ images, onClick }: { images: string[], onClick?: () => void 
   return (
     <div onClick={onClick} className="w-full h-64 overflow-hidden relative cursor-pointer">
       <AnimatePresence initial={false}>
-        <motion.img
-          key={images[index]}
-          src={images[index]}
-          alt="Project Slide"
-          className="w-full h-full object-cover absolute top-0 left-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-        />
+            <Image
+              key={images[index]}
+              src={images[index]}
+              alt="Project Slide"
+              fill
+              className="object-cover absolute top-0 left-0"
+            />
       </AnimatePresence>
     </div>
   );
@@ -58,15 +54,20 @@ const Modal = ({ images, onClose }: { images: string[], onClose: () => void }) =
         <button onClick={onClose} className="absolute top-4 right-4 text-white">
           <X size={28} />
         </button>
-        <motion.div
-          initial={{ rotateY: 90, opacity: 0 }}
-          animate={{ rotateY: 0, opacity: 1 }}
-          exit={{ rotateY: -90, opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full max-h-[80vh] rounded-xl"
-        >
-          <img src={images[current]} alt="Full View" className="w-full h-full object-contain rounded-xl" />
-        </motion.div>
+            <motion.div
+              initial={{ rotateY: 90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              exit={{ rotateY: -90, opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full max-h-[80vh] rounded-xl relative"
+            >
+              <Image 
+                src={images[current]} 
+                alt="Full View" 
+                fill
+                className="object-contain rounded-xl" 
+              />
+            </motion.div>
       </div>
     </div>
   );
@@ -77,7 +78,6 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web");
   const [modalImages, setModalImages] = useState<string[] | null>(null);
   const [showAll, setShowAll] = useState(false);
-  const { darkMode } = useDarkMode();
 
   const filteredProjects = projects.filter(project =>
     project.categories.includes(selectedCategory)
@@ -100,7 +100,7 @@ const Projects = () => {
             Our Works
           </h2>
           <p className="text-sm text-gray-600 max-w-2xl mb-6">
-            Explore our portfolio of successful projects and see how we've helped businesses grow through digital innovation.
+                Explore our portfolio of successful projects and see how we&apos;ve helped businesses grow through digital innovation.
           </p>
           
           {/* Category Filter */}
@@ -142,10 +142,11 @@ const Projects = () => {
                   {project.images && project.images.length > 0 ? (
                     <Carousel images={project.images} onClick={() => setModalImages(project.images!)} />
                   ) : (
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.name}
-                      className="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-cover cursor-pointer group-hover:scale-105 transition-transform duration-300"
                       onClick={() => setModalImages([project.image])}
                     />
                   )}
@@ -190,7 +191,7 @@ const Projects = () => {
               Ready to start your project?
             </h3>
             <p className="text-gray-600 mb-6">
-              Let's discuss how we can help bring your ideas to life.
+                  Let&apos;s discuss how we can help bring your ideas to life.
             </p>
             <a
               href="mailto:kalisagad05@gmail.com"

@@ -73,7 +73,7 @@ const Footer = () => {
             Want to know more about our way of working?
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Request a quote and let's discuss how we can help your business grow.
+            Request a quote and let&apos;s discuss how we can help your business grow.
           </p>
           <a
             href="mailto:kalisagad05@gmail.com"

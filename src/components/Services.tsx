@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Code, Palette, Smartphone, ShoppingCart, Search, PenTool, ArrowRight } from 'lucide-react';
+import { Code, Smartphone, ShoppingCart, Search, PenTool, ArrowRight } from 'lucide-react';
 import { useDarkMode } from '../components/darkmode';
 import { motion } from 'framer-motion';
 
@@ -125,7 +125,7 @@ const Services = () => {
                 Ready to start your project?
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Get a free quote today and let's discuss how we can help your business grow.
+                Get a free quote today and let&apos;s discuss how we can help your business grow.
               </p>
               <a
                 href="mailto:kalisagad05@gmail.com"

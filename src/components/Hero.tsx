@@ -1,11 +1,9 @@
 'use client';
 
 import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
 import { Phone, Mail, Linkedin, Github, Gitlab, Twitter, CloudUpload, ArrowRight } from 'lucide-react';
 import { useDarkMode } from '../components/darkmode';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const Hero = () => {
   const { darkMode } = useDarkMode();
