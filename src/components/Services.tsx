@@ -49,7 +49,7 @@ const Services = () => {
 
   return (
     <section className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -116,27 +116,7 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className={`inline-flex items-center justify-center p-8 rounded-2xl ${
-            darkMode ? 'bg-gray-800' : 'bg-white'
-          } border-2 border-dashed border-gray-300 dark:border-gray-600`}>
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Ready to start your project?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Get a free quote today and let&apos;s discuss how we can help your business grow.
-              </p>
-              <a
-                href="mailto:kalisagad05@gmail.com"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-              >
-                Get a Free Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

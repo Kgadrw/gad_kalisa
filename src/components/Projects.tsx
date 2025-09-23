@@ -87,7 +87,7 @@ const Projects = () => {
 
   return (
     <section id="works" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -160,11 +160,12 @@ const Projects = () => {
                 </div>
                 
                 {/* Project Name */}
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                    {project.name}
-                  </h3>
-                </div>
+                <div className="text-left">
+  <h3 className="text-lg font-normal text-gray-900 group-hover:text-blue-600 transition-colors duration-300 antialiased">
+    {project.name}
+  </h3>
+</div>
+
               </Link>
             </motion.div>
           ))}
@@ -185,25 +186,7 @@ const Projects = () => {
         )}
 
         {/* CTA Section */}
-        <div className="mt-20 text-center">
-          <div className="inline-block p-8 rounded-2xl bg-gray-50">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to start your project?
-            </h3>
-            <p className="text-gray-600 mb-6">
-                  Let&apos;s discuss how we can help bring your ideas to life.
-            </p>
-            <a
-              href="mailto:kalisagad05@gmail.com"
-              className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-            >
-              Get a Free Quote
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
+        
       </div>
 
       {modalImages && <Modal images={modalImages} onClose={() => setModalImages(null)} />}
