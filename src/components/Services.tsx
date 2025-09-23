@@ -51,10 +51,10 @@ const Services = () => {
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="text-left mb-12"
         >
@@ -69,19 +69,19 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, rotateY: 5 }}
-              className={`group p-6 rounded-xl card-hover ${
-                darkMode 
-                  ? 'bg-gray-800 border border-gray-700' 
-                  : 'bg-white border border-gray-200'
-              }`}
-            >
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02 }}
+                      className={`group p-6 rounded-xl card-hover ${
+                        darkMode
+                          ? 'bg-gray-800 border border-gray-700'
+                          : 'bg-white border border-gray-200'
+                      }`}
+                    >
               <div className="flex items-center mb-4">
                 <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-400 mr-3">
                   {service.icon}

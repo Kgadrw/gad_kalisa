@@ -42,9 +42,9 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -62,31 +62,31 @@ const About = () => {
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Services</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      darkMode 
-                        ? 'bg-gray-800 text-gray-300 border border-gray-700' 
-                        : 'bg-white text-gray-700 border border-gray-200'
-                    }`}
-                  >
+                        <motion.span
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.2, delay: index * 0.05 }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.05 }}
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            darkMode
+                              ? 'bg-gray-800 text-gray-300 border border-gray-700'
+                              : 'bg-white text-gray-700 border border-gray-200'
+                          }`}
+                        >
                     {skill}
                   </motion.span>
                 ))}
               </div>
             </div>
 
-            <motion.a
-              href="mailto:kalisagad05@gmail.com"
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
-            >
+                    <motion.a
+                      href="mailto:kalisagad05@gmail.com"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
+                    >
               Get a Free Quote Today
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -95,24 +95,24 @@ const About = () => {
           </motion.div>
 
           {/* Right Content - Stats */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+          <motion.div
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-6"
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, rotateY: 10 }}
+                whileHover={{ scale: 1.02 }}
                 className={`text-center p-6 rounded-xl card-hover ${
-                  darkMode 
-                    ? 'bg-gray-800 border border-gray-700' 
+                  darkMode
+                    ? 'bg-gray-800 border border-gray-700'
                     : 'bg-white border border-gray-200'
                 }`}
               >
@@ -131,10 +131,10 @@ const About = () => {
         </div>
 
         {/* FAQ Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="mt-16"
         >
@@ -144,19 +144,19 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {faqs.map((faq, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className={`rounded-xl overflow-hidden ${
-                  darkMode 
-                    ? 'bg-gray-800 border border-gray-700' 
-                    : 'bg-white border border-gray-200'
-                }`}
-              >
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.01 }}
+              className={`rounded-xl overflow-hidden ${
+                darkMode
+                  ? 'bg-gray-800 border border-gray-700'
+                  : 'bg-white border border-gray-200'
+              }`}
+            >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                   className="w-full p-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"

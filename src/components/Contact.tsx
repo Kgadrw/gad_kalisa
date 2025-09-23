@@ -41,10 +41,10 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="text-left mb-12"
         >

@@ -89,10 +89,10 @@ const Projects = () => {
     <section id="works" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="text-left mb-12"
         >
@@ -105,11 +105,11 @@ const Projects = () => {
           
           {/* Category Filter */}
           <div className="flex gap-3 mb-8">
-            {["Web", "UI/UX"].map(category => (
+            {["Web", "E-commerce", "Mobile", "Logistics", "Business", "B2B", "3D Printing", "Manufacturing", "Technology", "Consulting"].map(category => (
               <motion.button
                 key={category}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => {
                   setSelectedCategory(category);
                   setShowAll(false);
@@ -132,9 +132,9 @@ const Projects = () => {
             <motion.div
               key={project.id}
               className="group"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <Link href={`/projects/${project.id}`}>
                 {/* Project Image */}
@@ -175,8 +175,8 @@ const Projects = () => {
         {filteredProjects.length > 6 && (
           <div className="text-center mt-12">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setShowAll(prev => !prev)}
               className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
             >

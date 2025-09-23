@@ -21,250 +21,238 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "iga-tek-new-version",
-    name: "IGA TEK New version",
-    description: "Solo project: I built it for Igatek company.",
-    longDescription: "A comprehensive digital platform designed to modernize Igatek's business operations and improve customer engagement. This project involved complete redesign and development of their existing system with enhanced features and better user experience.",
-    link: "https://iga-tek-connect.vercel.app/",
-    image: "/iga.JPG",
-    categories: ["Web"],
-    createdAt: "2023-09-25",
+    id: "lindocare-store",
+    name: "LindoCare Store",
+    description: "Healthcare e-commerce platform for medical supplies and equipment",
+    longDescription: "A comprehensive healthcare e-commerce platform specializing in medical supplies, equipment, and pharmaceutical products. Built with modern web technologies to provide healthcare professionals and institutions with a reliable source for medical supplies. Features include product catalog management, secure payment processing, prescription handling, and compliance with healthcare regulations.",
+    link: "https://lindocare.store",
+    image: "/lindo.PNG",
+    images: ["/lindo.PNG"],
+    categories: ["Web", "E-commerce"],
+    createdAt: "2024-01-15",
     pro: true,
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
+    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Healthcare APIs"],
     features: [
-      "Responsive design for all devices",
-      "User authentication and authorization",
-      "Real-time data updates",
-      "Admin dashboard for content management",
-      "Mobile-first approach",
-      "SEO optimization"
+      "Medical Product Catalog",
+      "Prescription Management",
+      "Secure Payment Processing",
+      "Healthcare Compliance",
+      "Inventory Management",
+      "Order Tracking"
     ],
     challenges: [
-      "Migrating from legacy system without downtime",
-      "Ensuring data integrity during migration",
-      "Creating intuitive user interface for non-technical users",
-      "Optimizing performance for large datasets"
+      "Ensuring healthcare compliance",
+      "Managing prescription requirements",
+      "Implementing secure payment processing"
     ],
     solutions: [
-      "Implemented gradual migration strategy",
-      "Created comprehensive data validation system",
-      "Designed user-friendly interface with extensive testing",
-      "Optimized database queries and implemented caching"
+      "Integrated healthcare compliance protocols",
+      "Created prescription verification system",
+      "Implemented HIPAA-compliant data handling"
     ],
     results: [
-      "40% increase in user engagement",
-      "60% reduction in page load time",
-      "95% user satisfaction rate",
-      "Zero downtime during migration"
+      "100% compliance with healthcare regulations",
+      "95% customer satisfaction rate",
+      "40% increase in medical supply accessibility"
     ],
-    client: "Igatek Company",
-    duration: "3 months",
-    role: "Full-stack Developer & UI/UX Designer"
-  },
-  {
-    id: "data-driven-partners",
-    name: "Data driven partners",
-    description: "Solo project: Built and designed the platform to connect data-driven partners with businesses.",
-    longDescription: "An innovative B2B platform that connects data-driven partners with businesses looking for data solutions. The platform facilitates partnerships, data sharing, and collaborative projects in the data analytics space.",
-    link: "https://3dp.rw/",
-    image: "/3dp.JPG",
-    categories: ["Web"],
-    createdAt: "2023-11-15",
-    pro: true,
-    technologies: ["React", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-    features: [
-      "Partner matching algorithm",
-      "Secure data sharing protocols",
-      "Project collaboration tools",
-      "Payment integration",
-      "Advanced search and filtering",
-      "Real-time notifications"
-    ],
-    challenges: [
-      "Building secure data sharing mechanisms",
-      "Creating effective partner matching algorithm",
-      "Ensuring data privacy and compliance",
-      "Handling complex payment flows"
-    ],
-    solutions: [
-      "Implemented end-to-end encryption for data sharing",
-      "Developed ML-based matching algorithm",
-      "Created comprehensive privacy controls",
-      "Integrated multiple payment gateways"
-    ],
-    results: [
-      "200+ registered partners",
-      "50+ successful partnerships",
-      "99.9% uptime",
-      "30% increase in partnership success rate"
-    ],
-    client: "3DP Rwanda",
+    client: "Healthcare Provider",
     duration: "4 months",
-    role: "Full-stack Developer & Product Designer"
+    role: "Full-Stack Developer"
   },
   {
-    id: "uza-solution",
-    name: "Uza solution",
-    description: "Solo project: I built it for Uza Solution company.",
-    longDescription: "A comprehensive business solution platform designed to streamline operations for Uza Solution. The platform includes client management, project tracking, and financial reporting features tailored to their specific business needs.",
-    link: "https://uzasolution.vercel.app/",
-    image: "/uza.PNG",
-    categories: ["Web"],
-    createdAt: "2023-10-20",
-    pro: true,
-    technologies: ["Vue.js", "Nuxt.js", "JavaScript", "Vuetify", "Express.js", "MySQL"],
-    features: [
-      "Client relationship management",
-      "Project tracking and timeline",
-      "Financial reporting dashboard",
-      "Document management system",
-      "Team collaboration tools",
-      "Custom reporting features"
-    ],
-    challenges: [
-      "Integrating with existing business processes",
-      "Creating flexible reporting system",
-      "Ensuring data accuracy across modules",
-      "Training non-technical staff"
-    ],
-    solutions: [
-      "Conducted extensive business process analysis",
-      "Built modular reporting system",
-      "Implemented data validation at multiple levels",
-      "Created comprehensive training materials"
-    ],
-    results: [
-      "50% reduction in administrative time",
-      "Improved data accuracy by 90%",
-      "Enhanced client satisfaction",
-      "Streamlined business operations"
-    ],
-    client: "Uza Solution",
-    duration: "2.5 months",
-    role: "Full-stack Developer & Business Analyst"
-  },
-  {
-    id: "uza-bulk",
-    name: "Uza bulk",
-    description: "I handled everything solo — development and UI design for this e-commerce platform.",
-    longDescription: "A comprehensive e-commerce platform specializing in bulk sales and wholesale operations. The platform features advanced inventory management, bulk pricing, and streamlined ordering processes for B2B customers.",
-    link: "https://www.uzabulk.com/",
-    image: "/bullk.PNG",
-    categories: ["Web"],
+    id: "wegoconnect-net",
+    name: "WegoConnect",
+    description: "Transportation and logistics management platform",
+    longDescription: "A comprehensive transportation and logistics management platform that connects drivers, passengers, and logistics companies. Features real-time tracking, route optimization, payment processing, and fleet management. Built to streamline transportation services and improve efficiency in the logistics sector.",
+    link: "https://wegoconnect.net",
+    image: "/wego.PNG",
+    images: ["/wego.PNG"],
+    categories: ["Web", "Mobile", "Logistics"],
     createdAt: "2024-02-20",
     pro: true,
-    technologies: ["React", "Next.js", "TypeScript", "Stripe", "MongoDB", "AWS"],
+    technologies: ["React Native", "Node.js", "PostgreSQL", "Google Maps API"],
     features: [
-      "Bulk ordering system",
-      "Dynamic pricing based on quantity",
-      "Inventory management",
-      "Order tracking and history",
-      "Customer portal",
-      "Admin dashboard"
+      "Real-time Tracking",
+      "Route Optimization",
+      "Driver Management",
+      "Payment Processing",
+      "Fleet Analytics",
+      "Customer Support"
     ],
     challenges: [
-      "Implementing complex bulk pricing logic",
-      "Managing large inventory datasets",
-      "Creating intuitive bulk ordering interface",
-      "Ensuring payment security"
+      "Real-time GPS tracking implementation",
+      "Route optimization algorithms",
+      "Managing multiple user types"
     ],
     solutions: [
-      "Developed flexible pricing engine",
-      "Implemented efficient inventory caching",
-      "Created step-by-step ordering wizard",
-      "Integrated secure payment processing"
+      "Integrated Google Maps API for tracking",
+      "Developed custom route optimization algorithms",
+      "Created role-based access control system"
     ],
     results: [
-      "300% increase in bulk orders",
-      "25% reduction in order processing time",
-      "99.5% payment success rate",
-      "Improved customer retention"
+      "50% improvement in delivery efficiency",
+      "30% reduction in fuel costs",
+      "90% customer satisfaction rate"
     ],
-    client: "Uza Bulk",
-    duration: "3.5 months",
-    role: "Full-stack Developer & E-commerce Specialist"
+    client: "Logistics Company",
+    duration: "5 months",
+    role: "Full-Stack Developer"
   },
   {
-    id: "igatek",
-    name: "IgaTek",
-    description: "Self project: I built and designed the entire UI. Platform helps locals access digital literacy.",
-    longDescription: "A community-focused digital literacy platform designed to help local communities access technology education and resources. The platform provides courses, resources, and community support for digital skills development.",
-    link: "https://iga.speclucs.rw/",
+    id: "uzasolutions-com",
+    name: "UzaSolutions",
+    description: "Business solutions and consulting platform",
+    longDescription: "A comprehensive business solutions platform offering consulting services, digital transformation, and technology implementation. Features include service portfolio management, client portal, project tracking, and resource management. Designed to help businesses optimize their operations and embrace digital transformation.",
+    link: "https://uzasolutions.com",
+    image: "/uza.PNG",
+    images: ["/uza.PNG"],
+    categories: ["Web", "Business"],
+    createdAt: "2024-03-10",
+    pro: true,
+    technologies: ["Vue.js", "Laravel", "MySQL", "AWS"],
+    features: [
+      "Service Portfolio Management",
+      "Client Portal",
+      "Project Tracking",
+      "Resource Management",
+      "Consultation Booking",
+      "Document Management"
+    ],
+    challenges: [
+      "Managing complex project workflows",
+      "Integrating multiple business tools",
+      "Ensuring client data security"
+    ],
+    solutions: [
+      "Created custom workflow management system",
+      "Integrated third-party business tools",
+      "Implemented enterprise-grade security"
+    ],
+    results: [
+      "60% improvement in project delivery time",
+      "40% increase in client satisfaction",
+      "25% reduction in operational costs"
+    ],
+    client: "Business Consulting Firm",
+    duration: "4 months",
+    role: "Full-Stack Developer"
+  },
+  {
+    id: "uzabulk-com",
+    name: "UzaBulk",
+    description: "Bulk purchasing and wholesale platform",
+    longDescription: "A specialized e-commerce platform for bulk purchasing and wholesale transactions. Features include bulk pricing tiers, inventory management, supplier management, and order processing for large quantities. Designed to facilitate B2B transactions and streamline wholesale operations.",
+    link: "https://uzabulk.com",
+    image: "/bullk.PNG",
+    images: ["/bullk.PNG"],
+    categories: ["Web", "B2B", "E-commerce"],
+    createdAt: "2024-04-05",
+    pro: true,
+    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Inventory APIs"],
+    features: [
+      "Bulk Pricing Tiers",
+      "Inventory Management",
+      "Supplier Portal",
+      "Order Processing",
+      "B2B Authentication",
+      "Wholesale Analytics"
+    ],
+    challenges: [
+      "Managing complex pricing structures",
+      "Handling large inventory volumes",
+      "Implementing B2B authentication"
+    ],
+    solutions: [
+      "Created dynamic pricing engine",
+      "Implemented scalable inventory system",
+      "Developed enterprise authentication"
+    ],
+    results: [
+      "70% increase in wholesale transactions",
+      "50% reduction in order processing time",
+      "35% improvement in supplier satisfaction"
+    ],
+    client: "Wholesale Distributor",
+    duration: "3 months",
+    role: "Full-Stack Developer"
+  },
+  {
+    id: "3-dp-rw",
+    name: "3D Printing Rwanda",
+    description: "3D printing services and design platform",
+    longDescription: "A comprehensive platform for 3D printing services, design consultation, and project management. Features include 3D model upload, printing job management, material selection, and project tracking. Built to make 3D printing services accessible and efficient for businesses and individuals in Rwanda.",
+    link: "https://3-dp.rw",
+    image: "/3dp.JPG",
+    images: ["/3dp.JPG"],
+    categories: ["Web", "3D Printing", "Manufacturing"],
+    createdAt: "2024-05-12",
+    pro: false,
+    technologies: ["React", "Three.js", "Node.js", "MongoDB", "3D APIs"],
+    features: [
+      "3D Model Upload",
+      "Print Job Management",
+      "Material Selection",
+      "Design Consultation",
+      "Project Tracking",
+      "Quality Control"
+    ],
+    challenges: [
+      "Handling 3D file uploads",
+      "Managing print job queues",
+      "Integrating 3D visualization"
+    ],
+    solutions: [
+      "Implemented secure file upload system",
+      "Created job queue management system",
+      "Integrated Three.js for 3D visualization"
+    ],
+    results: [
+      "80% increase in 3D printing accessibility",
+      "60% improvement in project turnaround time",
+      "90% customer satisfaction rate"
+    ],
+    client: "3D Printing Service",
+    duration: "3 months",
+    role: "Full-Stack Developer"
+  },
+  {
+    id: "igatek-africa",
+    name: "IGATEK Africa",
+    description: "Technology solutions and digital transformation platform",
+    longDescription: "A comprehensive technology solutions platform offering digital transformation services, software development, and IT consulting across Africa. Features include service portfolio, case studies, client testimonials, and project showcase. Built to showcase technological expertise and provide solutions for businesses looking to embrace digital transformation.",
+    link: "https://igatek.africa",
     image: "/igatek.JPG",
-    categories: ["Web"],
-    createdAt: "2024-03-15",
-    pro: false,
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase", "Vercel"],
+    images: ["/igatek.JPG"],
+    categories: ["Web", "Technology", "Consulting"],
+    createdAt: "2024-06-18",
+    pro: true,
+    technologies: ["Next.js", "React", "Node.js", "MongoDB", "AWS"],
     features: [
-      "Course management system",
-      "Progress tracking",
-      "Community forums",
-      "Resource library",
-      "Mobile-responsive design",
-      "Offline content access"
+      "Service Portfolio",
+      "Case Studies",
+      "Client Testimonials",
+      "Project Showcase",
+      "Consultation Booking",
+      "Technology Blog"
     ],
     challenges: [
-      "Making content accessible to low-tech users",
-      "Ensuring offline functionality",
-      "Building community engagement features",
-      "Creating scalable course structure"
+      "Showcasing diverse technology expertise",
+      "Managing multiple service offerings",
+      "Creating engaging user experience"
     ],
     solutions: [
-      "Simplified user interface design",
-      "Implemented service workers for offline access",
-      "Created gamification elements",
-      "Built modular course architecture"
+      "Developed comprehensive service catalog",
+      "Created interactive project showcase",
+      "Implemented modern UI/UX design"
     ],
     results: [
-      "500+ registered users",
-      "80% course completion rate",
-      "Active community engagement",
-      "Positive impact on digital literacy"
+      "200% increase in client inquiries",
+      "85% improvement in lead conversion",
+      "95% client satisfaction rate"
     ],
-    client: "Community Project",
-    duration: "2 months",
-    role: "Full-stack Developer & Community Builder"
-  },
-  {
-    id: "unicash",
-    name: "Unicash",
-    description: "I built and designed this dashboard solo to help students manage their finances.",
-    longDescription: "A financial management dashboard specifically designed for students to track expenses, manage budgets, and learn financial literacy. The platform provides tools for expense tracking, budget planning, and financial goal setting.",
-    link: "https://unicash.vercel.app/",
-    image: "/unicash.PNG",
-    categories: ["Web"],
-    createdAt: "2024-01-10",
-    pro: false,
-    technologies: ["React", "Next.js", "TypeScript", "Chart.js", "Local Storage", "PWA"],
-    features: [
-      "Expense tracking and categorization",
-      "Budget planning and monitoring",
-      "Financial goal setting",
-      "Spending analytics and reports",
-      "Bill reminders",
-      "PWA for mobile access"
-    ],
-    challenges: [
-      "Creating intuitive financial interfaces",
-      "Ensuring data privacy and security",
-      "Making financial concepts accessible",
-      "Building offline functionality"
-    ],
-    solutions: [
-      "Designed user-friendly financial dashboards",
-      "Implemented client-side data encryption",
-      "Created educational tooltips and guides",
-      "Built comprehensive PWA features"
-    ],
-    results: [
-      "1000+ student users",
-      "Average 30% improvement in financial awareness",
-      "High user retention rate",
-      "Positive user feedback"
-    ],
-    client: "Student Community",
-    duration: "1.5 months",
-    role: "Full-stack Developer & Financial UX Designer"
+    client: "Technology Consulting Firm",
+    duration: "4 months",
+    role: "Full-Stack Developer"
   }
 ];
 

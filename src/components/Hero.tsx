@@ -28,9 +28,9 @@ const Hero = () => {
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3 }}
           className="mb-8"
         >
           <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium rounded-full">
@@ -38,29 +38,29 @@ const Hero = () => {
           </span>
         </motion.div>
         
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="text-4xl lg:text-6xl font-bold leading-tight mb-6"
         >
           <span className="block text-gray-900 dark:text-white">We are shaping the future</span>
           <span className="block gradient-text">through digital innovation</span>
         </motion.h1>
 
-        <motion.p 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
         >
           I&apos;m a passionate full-stack developer with a keen eye for design. I love creating beautiful, functional websites and applications that make a difference.
         </motion.p>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 mb-10 justify-center"
         >
             <a
@@ -81,10 +81,10 @@ const Hero = () => {
         </motion.div>
 
         {/* Contact Info */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-6 text-sm text-gray-600 dark:text-gray-300 justify-center mb-8"
         >
           <div className="flex items-center justify-center">
@@ -98,10 +98,10 @@ const Hero = () => {
         </motion.div>
 
         {/* Social Links */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
+          transition={{ duration: 0.3, delay: 0.5 }}
           className="flex justify-center space-x-3"
         >
           <a href="https://github.com/Kgadrw" className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
