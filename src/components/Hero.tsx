@@ -2,31 +2,29 @@
 
 import React from 'react';
 import { Phone, Mail, Linkedin, Github, Gitlab, Twitter, CloudUpload, ArrowRight } from 'lucide-react';
-import { useDarkMode } from '../components/darkmode';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const { darkMode } = useDarkMode();
 
   return (
-    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900">
       {/* Gradient Grid Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 opacity-30 dark:opacity-20">
         {/* Vertical Lines */}
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, ${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)`,
-          backgroundSize: '60px 100%',
-          maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+          backgroundImage: 'linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
+          backgroundSize: '80px 100%',
+          maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)'
         }} />
         {/* Horizontal Lines */}
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to bottom, ${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)'} 1px, transparent 1px)`,
-          backgroundSize: '100% 60px',
-          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+          backgroundImage: 'linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
+          backgroundSize: '100% 80px',
+          maskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
         }} />
-      </div>
+          </div>
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 text-center">
         <motion.div
@@ -65,16 +63,16 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 mb-10 justify-center"
         >
-          <a
-            href="mailto:kalisagad05@gmail.com"
+            <a
+              href="mailto:kalisagad05@gmail.com"
             className="group inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:rotate-1"
-          >
+            >
             Start a Project
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="/CV2.pdf"
-            download
+            </a>
+            <a
+              href="/CV2.pdf"
+              download
             className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-rotate-1"
           >
             <CloudUpload className="mr-2 w-4 h-4" />

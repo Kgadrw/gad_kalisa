@@ -3,37 +3,14 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* globals.css or tailwind.css */
 html {
-  transition: background-color 0.3s, color 0.3s;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-}
-
-body[data-theme='dark'] {
-  --bg-color: #0a0a0a;
-  --text-color: #ffffff;
-  --primary-color: #3b82f6;
-  --secondary-color: #1e40af;
-  --accent-color: #60a5fa;
-  --card-bg: #1a1a1a;
-  --border-color: #333333;
-}
-
-body[data-theme='light'] {
-  --bg-color: #ffffff;
-  --text-color: #1a1a1a;
-  --primary-color: #3b82f6;
-  --secondary-color: #1e40af;
-  --accent-color: #60a5fa;
-  --card-bg: #f8fafc;
-  --border-color: #e2e8f0;
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300;
 }
 
 /* Custom gradient backgrounds */
@@ -67,14 +44,13 @@ body[data-theme='light'] {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 4px;
+  @apply bg-blue-600 dark:bg-blue-500 rounded;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+  @apply bg-blue-700 dark:bg-blue-400;
 }

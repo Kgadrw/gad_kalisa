@@ -1,9 +1,9 @@
 import React from 'react'
-import { Github, Linkedin, Twitter, Mail, Phone, ArrowRight } from 'lucide-react'
+import { Github, Linkedin, Twitter, Mail, Phone, ArrowRight, Sun, Moon } from 'lucide-react'
 import { useDarkMode } from '../components/darkmode'
 
 const Footer = () => {
-  const { darkMode } = useDarkMode()
+  const { darkMode, toggleDarkMode } = useDarkMode()
 
   return (
     <footer className={`${darkMode ? 'bg-gray-900' : 'bg-gray-50'} py-16`}>
@@ -90,11 +90,18 @@ const Footer = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               ©2014 - 2025 Gad Kalisa. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <a href="#home" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">Home</a>
               <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">About</a>
               <a href="#works" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">Works</a>
               <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">Contact</a>
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
             </div>
           </div>
         </div>

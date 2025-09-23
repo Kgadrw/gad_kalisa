@@ -86,7 +86,7 @@ const Projects = () => {
   const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   return (
-    <section id="works" className="py-20 bg-white">
+    <section id="works" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div 
@@ -96,10 +96,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-left mb-12"
         >
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
             Our Works
           </h2>
-          <p className="text-sm text-gray-600 max-w-2xl mb-6">
+          <p className="text-sm text-gray-600 dark:text-gray-300 max-w-2xl mb-6">
                 Explore our portfolio of successful projects and see how we&apos;ve helped businesses grow through digital innovation.
           </p>
           
@@ -114,11 +114,11 @@ const Projects = () => {
                   setSelectedCategory(category);
                   setShowAll(false);
                 }}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                          selectedCategory === category
+                            ? 'bg-blue-600 text-white shadow-lg'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                        }`}
               >
                 {category}
               </motion.button>
@@ -161,7 +161,7 @@ const Projects = () => {
                 
                 {/* Project Name */}
                 <div className="text-left">
-  <h3 className="text-lg font-normal text-gray-900 group-hover:text-blue-600 transition-colors duration-300 antialiased">
+  <h3 className="text-lg font-normal text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 antialiased">
     {project.name}
   </h3>
 </div>

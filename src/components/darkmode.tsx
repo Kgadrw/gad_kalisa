@@ -19,7 +19,23 @@ export const DarkModeProvider = ({ children }: { children: React.ReactNode }) =>
     // Load saved dark mode preference from localStorage
     const savedMode = localStorage.getItem('darkMode') === 'true';
     setDarkMode(savedMode);
+    
+    // Apply theme to document
+    if (savedMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
+
+  useEffect(() => {
+    // Apply theme to document when darkMode changes
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   // Toggle dark mode
   const toggleDarkMode = () => {

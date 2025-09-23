@@ -48,7 +48,7 @@ const Services = () => {
   ];
 
   return (
-    <section className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div 

@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { darkMode } = useDarkMode();
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -21,13 +20,13 @@ const Navbar = () => {
     <>
 
       {/* Main Navbar */}
-      <nav className={`w-full ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+              <nav className="w-full bg-white dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold">
               <span className="text-blue-600">G</span>
-              <span className={darkMode ? 'text-white' : 'text-gray-900'}>K</span>
+              <span className="text-gray-900 dark:text-white">K</span>
           </Link>
 
             {/* Desktop Navigation */}
@@ -36,9 +35,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition-colors hover:text-blue-600 ${
-                    darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700'
-                  }`}
+                  className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   {item.name}
                 </a>
@@ -66,17 +63,13 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className={`lg:hidden ${darkMode ? 'bg-gray-800' : 'bg-white'} border-t border-gray-200 dark:border-gray-700`}>
+                  <div className="lg:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                      darkMode 
-                        ? 'text-gray-300 hover:bg-gray-700 hover:text-white' 
-                        : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-                    }`}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
