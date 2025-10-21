@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import Aurora from './Aurora';
-import SplashCursor from './SplashCursor';
 
 const Hero = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -34,8 +33,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Splash Cursor */}
-      <SplashCursor />
 
       {/* Navbar */}
       <nav className="w-full relative z-20">
