@@ -13,11 +13,14 @@
     "@react-three/fiber": "^9.1.2",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.81.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.6.2",
     "lucide-react": "^0.484.0",
     "next": "^15.3.1",
     "next-sanity": "^9.9.6",
+    "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-parallax-tilt": "^1.7.294",
@@ -26,6 +29,8 @@
     "sanity": "^3.81.0",
     "sass": "^1.87.0",
     "styled-components": "^6.1.16",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.176.0"
   },
   "devDependencies": {

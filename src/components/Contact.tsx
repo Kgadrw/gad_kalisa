@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20 bg-transparent">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -48,10 +48,10 @@ const Contact: React.FC = () => {
           viewport={{ once: true }}
           className="text-left mb-12"
         >
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
             Get a Free Quote Today
           </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-300 max-w-2xl">
+          <p className="text-sm text-white/90 max-w-2xl">
             Please fill out the quick form and we will be in touch with you in lightning speed
           </p>
         </motion.div>

@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useDarkMode } from '../components/darkmode';
-import { Code, Users, Award, Clock, ChevronDown } from 'lucide-react';
+import { Code, Users, Award, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const About = () => {
   const { darkMode } = useDarkMode();
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const stats = [
     { icon: <Code className="w-8 h-8" />, number: "50+", label: "Projects Completed" },
@@ -21,20 +20,6 @@ const About = () => {
     "E-commerce Solutions", "Digital Marketing", "Branding"
   ];
 
-  const faqs = [
-    {
-      question: "Why should I choose you for my web design and development?",
-      answer: "I am a trusted web design developer in Rwanda offering creative and customized websites that help businesses grow. I use the latest technology to build user-friendly and SEO-optimized websites that fit your business needs."
-    },
-    {
-      question: "Do you offer custom website design or use pre-built templates?",
-      answer: "I specialize in creating top-class custom-designed websites tailored to fit your business goals and target audience. I bring unique ideas to life, ensuring your website stands out and leaves a lasting impact."
-    },
-    {
-      question: "Do you provide SEO-friendly websites?",
-      answer: "Yes, I ensure that every website I create is SEO-friendly. An SEO-friendly website is easily crawlable by search engines, improving visibility, user experience, and overall online presence."
-    }
-  ];
 
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -48,18 +33,18 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Best Web Design Company In Rwanda
+              About Gad Kalisa
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              I am a passionate full-stack developer with a keen eye for design, serving a variety of clients with industry-leading web solutions. My team is a curious mix of developers, designers, digital marketing experts and path breakers who can digitise your dreams.
+              I am a passionate full-stack developer with 4+ years of experience building scalable web applications and digital solutions. I specialize in creating user-friendly interfaces and robust backend systems that drive business growth across Rwanda and Africa.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              I provide highly scalable business solutions to my clients with innovative approaches and advanced methodologies. I focus on understanding my clients, being transparent, and offering affordable services without cutting corners.
+              My expertise spans modern web technologies including React, Node.js, and cloud platforms. I have successfully delivered 50+ projects for 30+ clients, focusing on e-commerce, business solutions, and digital transformation initiatives.
             </p>
 
-            {/* Skills */}
+            {/* Technical Skills */}
             <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Services</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Technical Expertise</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
                         <motion.span
@@ -130,66 +115,6 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* FAQ Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white text-left mb-8">
-            FAQ
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.01 }}
-              className={`rounded-xl overflow-hidden ${
-                darkMode
-                  ? 'bg-gray-800 border border-gray-700'
-                  : 'bg-white border border-gray-200'
-              }`}
-            >
-                <button
-                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full p-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                >
-                  <h4 className="text-sm font-bold text-gray-900 dark:text-white pr-2">
-                    {faq.question}
-                  </h4>
-                  <ChevronDown 
-                    className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
-                      openFAQ === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                
-                <motion.div
-                  initial={false}
-                  animate={{ 
-                    height: openFAQ === index ? 'auto' : 0,
-                    opacity: openFAQ === index ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="p-4 pt-0">
-                    <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

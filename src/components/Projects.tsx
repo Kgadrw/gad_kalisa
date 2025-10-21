@@ -86,7 +86,7 @@ const Projects = () => {
   const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   return (
-    <section id="works" className="py-20 bg-white dark:bg-gray-900">
+    <section id="works" className="py-20 bg-transparent">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -96,11 +96,11 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-left mb-12"
         >
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
-            Our Works
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+            Featured Projects
           </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-300 max-w-2xl mb-6">
-                Explore our portfolio of successful projects and see how we&apos;ve helped businesses grow through digital innovation.
+          <p className="text-sm text-white/90 max-w-2xl mb-6">
+                A showcase of my most impactful projects, demonstrating expertise in full-stack development, e-commerce solutions, and digital transformation across various industries.
           </p>
           
           {/* Category Filter */}
@@ -116,8 +116,8 @@ const Projects = () => {
                 }}
                         className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                           selectedCategory === category
-                            ? 'bg-blue-600 text-white shadow-lg'
-                            : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                            ? 'bg-white/20 text-white shadow-lg backdrop-blur-sm'
+                            : 'bg-white/10 text-white/80 hover:bg-white/20 backdrop-blur-sm'
                         }`}
               >
                 {category}
@@ -161,7 +161,7 @@ const Projects = () => {
                 
                 {/* Project Name */}
                 <div className="text-left">
-  <h3 className="text-lg font-normal text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 antialiased">
+  <h3 className="text-lg font-normal text-white group-hover:text-blue-400 transition-colors duration-300 antialiased">
     {project.name}
   </h3>
 </div>
@@ -178,7 +178,7 @@ const Projects = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setShowAll(prev => !prev)}
-              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-8 py-3 bg-transparent text-white font-semibold rounded-lg border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300"
             >
               {showAll ? "Show Less" : "See Portfolio"}
             </motion.button>

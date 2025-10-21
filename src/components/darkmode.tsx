@@ -13,15 +13,16 @@ export const useDarkMode = () => useContext(DarkModeContext);
 
 // Context provider component
 export const DarkModeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
 
   useEffect(() => {
-    // Load saved dark mode preference from localStorage
-    const savedMode = localStorage.getItem('darkMode') === 'true';
-    setDarkMode(savedMode);
+    // Load saved dark mode preference from localStorage, default to true (dark mode)
+    const savedMode = localStorage.getItem('darkMode');
+    const isDarkMode = savedMode === null ? true : savedMode === 'true';
+    setDarkMode(isDarkMode);
     
     // Apply theme to document
-    if (savedMode) {
+    if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
