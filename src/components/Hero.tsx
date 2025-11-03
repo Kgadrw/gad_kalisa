@@ -115,27 +115,37 @@ const Hero = () => {
             className="text-center lg:text-left"
           >
             {/* Professional Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}
               className="mb-4"
-            >
+        >
               <span className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-semibold rounded-full border border-blue-200 dark:border-blue-700">
-                Full-Stack Developer & UI/UX Designer
-              </span>
-            </motion.div>
-            
+            Full-Stack Developer & UI/UX Designer
+          </span>
+        </motion.div>
+        
             {/* Name and Title */}
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
               className="text-3xl lg:text-4xl font-bold leading-tight mb-3"
-            >
-              <span className="block text-white">Gad Kalisa</span>
-              <span className="block text-white/80 text-xl lg:text-2xl font-medium">Full-Stack Developer</span>
-            </motion.h1>
+        >
+              <span 
+                className="block"
+                style={{
+                  background: 'linear-gradient(to right, #3A29FF, #FF94B4, #FF3232)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                Gad Kalisa
+              </span>
+              <span className="block text-blue-200/90 text-xl lg:text-2xl font-medium">Full-Stack Developer</span>
+        </motion.h1>
 
             {/* Experience Summary */}
             <motion.div
@@ -144,29 +154,39 @@ const Hero = () => {
               transition={{ duration: 0.3, delay: 0.3 }}
               className="mb-4"
             >
-              <p className="text-base text-white/90 mb-4">
-                4+ years of experience building scalable web applications and digital solutions for businesses across Rwanda and Africa.
+              <p className="text-base text-blue-200/90 mb-4">
+                <span className="text-cyan-300 font-semibold">4+ years of experience</span> building <span className="text-purple-300 font-semibold">scalable web applications</span> and <span className="text-pink-300 font-semibold">digital solutions</span> for businesses across <span className="text-blue-300 font-semibold">Rwanda and Africa</span>.
               </p>
-              <div className="flex flex-wrap gap-4 text-sm text-white/70 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-4 text-sm text-blue-200/80 justify-center lg:justify-start">
                 <div className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-2 text-blue-600" />
-                  <span>4+ Years Experience</span>
+                  <Calendar className="w-4 h-4 mr-2 text-cyan-400" />
+                  <span className="text-cyan-300">4+ Years Experience</span>
                 </div>
                 <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2 text-blue-600" />
-                  <span>Kigali, Rwanda</span>
+                  <MapPin className="w-4 h-4 mr-2 text-purple-400" />
+                  <span className="text-purple-300">Kigali, Rwanda</span>
                 </div>
               </div>
             </motion.div>
 
             {/* Key Skills */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.4 }}
               className="mb-4"
             >
-              <h3 className="text-base font-semibold text-white mb-3">Core Expertise</h3>
+              <h3 
+                className="text-base font-semibold mb-3"
+                style={{
+                  background: 'linear-gradient(to right, #3A29FF, #FF94B4, #FF3232)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                Core Expertise
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {keySkills.map((skill, index) => (
                   <motion.div
@@ -178,8 +198,8 @@ const Hero = () => {
                   >
                     <div className="text-blue-400 mr-2">{skill.icon}</div>
                     <div>
-                      <div className="text-xs font-medium text-white">{skill.name}</div>
-                      <div className="text-xs text-white/70">{skill.level}</div>
+                      <div className="text-xs font-medium text-blue-200">{skill.name}</div>
+                      <div className="text-xs text-blue-300/70">{skill.level}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -187,66 +207,66 @@ const Hero = () => {
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-3 mb-4 justify-center lg:justify-start"
+        >
+            <a
+              href="mailto:kalisagad05@gmail.com"
+                className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold rounded-3xl border-2 border-cyan-400/40 hover:border-cyan-400/80 hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-300"
             >
-              <a
-                href="mailto:kalisagad05@gmail.com"
-                className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold rounded-3xl border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
-              >
-                Start a Project
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="/CV2.pdf"
-                download
-                className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold rounded-3xl border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
-              >
-                <CloudUpload className="mr-2 w-4 h-4" />
-                Download CV
-              </a>
-            </motion.div>
+            Start a Project
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="/CV2.pdf"
+              download
+                className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold rounded-3xl border-2 border-purple-400/40 hover:border-purple-400/80 hover:bg-purple-400/10 transition-all duration-300 transform hover:scale-105 hover:text-purple-300"
+          >
+            <CloudUpload className="mr-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
+            Download CV
+          </a>
+        </motion.div>
 
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-6 text-sm text-white/80 justify-center lg:justify-start mb-4"
-            >
+              className="flex flex-col sm:flex-row gap-6 text-sm text-blue-200/80 justify-center lg:justify-start mb-4"
+        >
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-blue-400" />
-                <span>+250 791 998 365</span>
-              </div>
+            <span>+250 791 998 365</span>
+          </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-blue-400" />
-                <span>kalisagad05@gmail.com</span>
-              </div>
-            </motion.div>
+            <span>kalisagad05@gmail.com</span>
+          </div>
+        </motion.div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.8 }}
               className="flex justify-center lg:justify-start space-x-4 mb-2"
-            >
-              <a href="https://github.com/Kgadrw" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110">
-                <Github className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://linkedin.com/in/gad-kalisa-2aa319333/" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110">
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://x.com/gadkalisa05" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110">
-                <Twitter className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://gitlab.com/kalisagad05" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110">
-                <Gitlab className="w-5 h-5 text-white" />
-              </a>
-            </motion.div>
+        >
+              <a href="https://github.com/Kgadrw" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-cyan-500/30 hover:text-cyan-300 border border-transparent hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-110">
+                <Github className="w-5 h-5 text-blue-200" />
+          </a>
+              <a href="https://linkedin.com/in/gad-kalisa-2aa319333/" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-blue-500/30 hover:text-blue-300 border border-transparent hover:border-blue-400/50 transition-all duration-300 transform hover:scale-110">
+                <Linkedin className="w-5 h-5 text-blue-200" />
+          </a>
+              <a href="https://x.com/gadkalisa05" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-pink-500/30 hover:text-pink-300 border border-transparent hover:border-pink-400/50 transition-all duration-300 transform hover:scale-110">
+                <Twitter className="w-5 h-5 text-blue-200" />
+          </a>
+              <a href="https://gitlab.com/kalisagad05" className="p-3 bg-gray-800/20 backdrop-blur-sm rounded-full hover:bg-purple-500/30 hover:text-purple-300 border border-transparent hover:border-purple-400/50 transition-all duration-300 transform hover:scale-110">
+                <Gitlab className="w-5 h-5 text-blue-200" />
+          </a>
+        </motion.div>
           </motion.div>
 
           {/* Right Content - Professional Image */}

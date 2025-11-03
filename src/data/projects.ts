@@ -62,7 +62,7 @@ export const projects: Project[] = [
   {
     id: "wegoconnect-net",
     name: "WegoConnect",
-    description: "Transportation and logistics management platform",
+    description: "Powering your world with reliable Networking & Smart IT solutions. From satellite connectivity to secure systems that keep you connected, protected, and in control.",
     longDescription: "A comprehensive transportation and logistics management platform that connects drivers, passengers, and logistics companies. Features real-time tracking, route optimization, payment processing, and fleet management. Built to streamline transportation services and improve efficiency in the logistics sector.",
     link: "https://wegoconnect.net",
     image: "/wego.PNG",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
   {
     id: "uzasolutions-com",
     name: "UzaSolutions",
-    description: "Business solutions and consulting platform",
+    description: "Africa's Gateway to Global Trade. We empower African businesses with tech-driven solutions that simplify sourcing, logistics, and scaling globally.",
     longDescription: "A comprehensive business solutions platform offering consulting services, digital transformation, and technology implementation. Features include service portfolio management, client portal, project tracking, and resource management. Designed to help businesses optimize their operations and embrace digital transformation.",
     link: "https://uzasolutions.com",
     image: "/uza.PNG",
