@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Globe, Eye, X } from "lucide-react";
-import Image from 'next/image';
 import { projects } from '@/data/projects';
 import HomeNavbar from './HomeNavbar';
 import Aurora from './Aurora';
@@ -88,85 +87,27 @@ const Projects = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="bg-gray-800/10 backdrop-blur-md rounded-xl shadow-lg border border-gray-700/20 overflow-hidden hover:border-gray-700/40 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group"
             >
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden bg-gray-800/30">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                {project.pro && (
-                  <span className="absolute top-3 right-3 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
-                    PRO
-                  </span>
-                )}
-              </div>
-
               {/* Project Content */}
               <div className="p-6">
                 {/* Project Name */}
-                <div className="flex items-center gap-2 mb-3">
-                  <Globe className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                  <h3 
-                    className="font-semibold text-lg"
-                    style={{
-                      background: 'linear-gradient(to right, #3A29FF, #FF94B4, #FF3232)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}
-                  >
-                    {project.name}
-                  </h3>
-                </div>
-
-                {/* Description */}
-                <p className="text-sm text-blue-200/80 mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-
-                {/* Categories */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.categories.map((category, catIndex) => (
-                    <span
-                      key={catIndex}
-                      className="px-2 py-1 bg-gradient-to-r from-blue-600/30 to-purple-600/30 text-blue-200 text-xs rounded border border-blue-400/40"
-                    >
-                      {category}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 py-1 bg-gray-700/30 text-xs rounded border border-gray-600/40 font-medium"
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <div className="flex items-center gap-2 flex-1">
+                    <Globe className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <h3 
+                      className="font-semibold text-lg"
                       style={{
                         background: 'linear-gradient(to right, #3A29FF, #FF94B4, #FF3232)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                        borderColor: 'rgba(58, 41, 255, 0.3)'
+                        backgroundClip: 'text'
                       }}
                     >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span 
-                      className="px-2 py-1 text-xs"
-                      style={{
-                        background: 'linear-gradient(to right, #3A29FF, #FF94B4, #FF3232)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                        opacity: 0.6
-                      }}
-                    >
-                      +{project.technologies.length - 3}
+                      {project.name}
+                    </h3>
+                  </div>
+                  {project.pro && (
+                    <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                      PRO
                     </span>
                   )}
                 </div>
