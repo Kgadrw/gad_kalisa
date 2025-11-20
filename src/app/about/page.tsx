@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   MapPin, Phone, Mail, GraduationCap, Briefcase, Award, 
-  Code, Palette, Globe, Languages, Heart, ExternalLink 
+  Code, Palette, Languages, Heart, ExternalLink 
 } from 'lucide-react';
 import HomeNavbar from '@/components/HomeNavbar';
 import Aurora from '@/components/Aurora';
@@ -194,7 +194,7 @@ const AboutPage = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-1">
-                  Bachelor's Degree, Computer Science
+                  Bachelor&apos;s Degree, Computer Science
                 </h3>
                 <p className="text-blue-200/80 mb-2">University of the People</p>
                 <p className="text-sm text-blue-200/60">Nov 2024 - 2028</p>

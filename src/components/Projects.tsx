@@ -72,7 +72,7 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-base text-blue-200/90 max-w-2xl mx-auto mb-6"
             >
-              Here are some projects I've built that I'm <span className="text-cyan-300 font-semibold">proud of</span>. Each one represents a unique challenge solved, a client's vision realized, and a step forward in my journey as a <span className="text-purple-300 font-semibold">developer</span>. 
+              Here are some projects I&apos;ve built that I&apos;m <span className="text-cyan-300 font-semibold">proud of</span>. Each one represents a unique challenge solved, a client&apos;s vision realized, and a step forward in my journey as a <span className="text-purple-300 font-semibold">developer</span>. 
               From <span className="text-pink-300 font-semibold">e-commerce platforms</span> to <span className="text-blue-300 font-semibold">data-driven solutions</span>, these are the stories behind the code.
             </motion.p>
 

@@ -36,13 +36,13 @@ const About = () => {
               About Me
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Hey! I'm Gad, a full-stack developer from Kigali, Rwanda. What started as curiosity about how websites work has grown into a passion for building digital solutions that make a real impact. I love the challenge of turning complex problems into elegant, user-friendly applications.
+              Hey! I&apos;m Gad, a full-stack developer from Kigali, Rwanda. What started as curiosity about how websites work has grown into a passion for building digital solutions that make a real impact. I love the challenge of turning complex problems into elegant, user-friendly applications.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Over the past 4+ years, I've had the privilege of working with amazing clients across Rwanda and Africa, helping them bring their ideas to life. Whether it's an e-commerce platform, a data analytics dashboard, or a business management system, I approach each project with the same dedication and attention to detail.
+              Over the past 4+ years, I&apos;ve had the privilege of working with amazing clients across Rwanda and Africa, helping them bring their ideas to life. Whether it&apos;s an e-commerce platform, a data analytics dashboard, or a business management system, I approach each project with the same dedication and attention to detail.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and staying ahead of the curve in this ever-evolving tech landscape.
+              When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and staying ahead of the curve in this ever-evolving tech landscape.
             </p>
 
             {/* Technical Skills */}
@@ -75,7 +75,7 @@ const About = () => {
                       whileTap={{ scale: 0.98 }}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
                     >
-              Let's Work Together
+              Let&apos;s Work Together
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

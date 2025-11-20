@@ -234,7 +234,7 @@ const Hero = () => {
               href="mailto:kalisagad05@gmail.com"
                 className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold rounded-3xl border-2 border-cyan-400/40 hover:border-cyan-400/80 hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-300"
             >
-            Let's Build Something
+            Let&apos;s Build Something
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
