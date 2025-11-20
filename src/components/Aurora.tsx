@@ -109,7 +109,6 @@ void main() {
 }
 `;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Aurora(props: any) {
   const { colorStops = ['#5227FF', '#7cff67', '#5227FF'], amplitude = 1.0, blend = 0.5 } = props;
   const propsRef = useRef(props);
@@ -132,7 +131,6 @@ export default function Aurora(props: any) {
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
 
-    // eslint-disable-next-line prefer-const, @typescript-eslint/no-explicit-any
     let program: any;
 
     function resize() {
@@ -197,7 +195,6 @@ export default function Aurora(props: any) {
       }
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amplitude]);
 
   return <div ref={ctnDom} className="w-full h-full" />;

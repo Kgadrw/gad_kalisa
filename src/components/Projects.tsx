@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Globe, Eye, X } from "lucide-react";
+import Image from 'next/image';
 import { projects } from '@/data/projects';
 import HomeNavbar from './HomeNavbar';
 import Aurora from './Aurora';
@@ -89,10 +90,11 @@ const Projects = () => {
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden bg-gray-800/30">
-                <img
+                <Image
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 {project.pro && (
                   <span className="absolute top-3 right-3 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">

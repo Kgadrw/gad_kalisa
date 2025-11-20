@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useDarkMode } from './darkmode';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { darkMode, toggleDarkMode } = useDarkMode();
+  const pathname = usePathname();
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -29,15 +31,22 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`font-medium transition-colors ${
+                      isActive
+                        ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* CTA Buttons and Dark Mode Toggle */}
@@ -72,16 +81,23 @@ const Navbar = () => {
           {isOpen && (
                   <div className="lg:hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg mt-2 mx-6">
               <div className="px-4 pt-4 pb-4 space-y-1">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                        isActive
+                          ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
                 <div className="pt-4 pb-2 space-y-2">
                   {/* Dark Mode Toggle for Mobile */}
                   <button

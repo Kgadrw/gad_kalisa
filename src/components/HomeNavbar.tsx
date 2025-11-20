@@ -3,9 +3,11 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const HomeNavbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
   
   const navItems = [
     { name: 'Home', href: '/' },
@@ -24,15 +26,22 @@ const HomeNavbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="font-medium text-white/90 hover:text-white transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`font-medium transition-colors ${
+                    isActive
+                      ? 'text-white font-semibold border-b-2 border-blue-400 pb-1'
+                      : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA Buttons */}
@@ -58,16 +67,23 @@ const HomeNavbar = () => {
         {isOpen && (
           <div className="lg:hidden bg-gray-800/10 backdrop-blur-md border border-gray-700/20 rounded-2xl shadow-lg mt-2 mx-6">
             <div className="px-4 pt-4 pb-4 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                      isActive
+                        ? 'bg-white/20 text-white font-semibold border-l-4 border-blue-400'
+                        : 'text-white hover:bg-white/10'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
               <div className="pt-4 pb-2">
                 <Link
                   href="/contact"

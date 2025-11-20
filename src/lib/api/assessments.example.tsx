@@ -10,7 +10,6 @@ import {
   getAssessments,
   getAssessmentById,
   createAssessment,
-  updateAssessment,
   calculateRiskScore,
   submitAssessment,
   type Assessment,
