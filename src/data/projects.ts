@@ -181,7 +181,7 @@ export const projects: Project[] = [
     name: "3D Printing Rwanda",
     description: "3D printing services and design platform",
     longDescription: "A comprehensive platform for 3D printing services, design consultation, and project management. Features include 3D model upload, printing job management, material selection, and project tracking. Built to make 3D printing services accessible and efficient for businesses and individuals in Rwanda.",
-    link: "https://3-dp.rw",
+    link: "https://3dp.rw",
     image: "/3dp.JPG",
     images: ["/3dp.JPG"],
     categories: ["Web", "3D Printing", "Manufacturing"],
@@ -251,6 +251,121 @@ export const projects: Project[] = [
       "95% client satisfaction rate"
     ],
     client: "Technology Consulting Firm",
+    duration: "4 months",
+    role: "Full-Stack Developer"
+  },
+  {
+    id: "lindocare-net",
+    name: "LindoCare",
+    description: "Healthcare services and medical care platform",
+    longDescription: "A comprehensive healthcare platform providing medical services, consultations, and healthcare management. Features include appointment booking, patient records management, telemedicine capabilities, and healthcare provider directory. Built to improve healthcare accessibility and streamline medical services.",
+    link: "https://lindocare.net",
+    image: "/lindo.PNG",
+    images: ["/lindo.PNG"],
+    categories: ["Web", "Healthcare"],
+    createdAt: "2024-07-10",
+    pro: true,
+    technologies: ["React", "Node.js", "MongoDB", "Healthcare APIs"],
+    features: [
+      "Appointment Booking",
+      "Patient Records",
+      "Telemedicine",
+      "Provider Directory",
+      "Health Records Management",
+      "Medical Consultations"
+    ],
+    challenges: [
+      "Ensuring patient data privacy",
+      "Managing appointment scheduling",
+      "Integrating telemedicine features"
+    ],
+    solutions: [
+      "Implemented HIPAA-compliant data handling",
+      "Created intelligent scheduling system",
+      "Integrated video consultation platform"
+    ],
+    results: [
+      "90% patient satisfaction rate",
+      "50% reduction in appointment wait times",
+      "60% increase in healthcare accessibility"
+    ],
+    client: "Healthcare Provider",
+    duration: "3 months",
+    role: "Full-Stack Developer"
+  },
+  {
+    id: "nel-ngabo-vercel-app",
+    name: "Nel Ngabo",
+    description: "Digital platform and services",
+    longDescription: "A modern digital platform offering various services and solutions. Built with cutting-edge technologies to provide an exceptional user experience and robust functionality.",
+    link: "https://nel-ngabo.vercel.app",
+    image: "/web.png",
+    images: ["/web.png"],
+    categories: ["Web"],
+    createdAt: "2024-08-15",
+    pro: false,
+    technologies: ["Next.js", "React", "TypeScript", "Vercel"],
+    features: [
+      "Modern UI/UX",
+      "Responsive Design",
+      "Fast Performance",
+      "SEO Optimized"
+    ],
+    challenges: [
+      "Creating engaging user experience",
+      "Ensuring fast load times",
+      "Optimizing for various devices"
+    ],
+    solutions: [
+      "Implemented modern design patterns",
+      "Optimized performance with Next.js",
+      "Created responsive layouts"
+    ],
+    results: [
+      "95% user satisfaction",
+      "Fast page load times",
+      "Mobile-friendly experience"
+    ],
+    client: "Digital Services",
+    duration: "2 months",
+    role: "Full-Stack Developer"
+  },
+  {
+    id: "starhawk-rw",
+    name: "Starhawk Rwanda",
+    description: "Agricultural platform and assessment system",
+    longDescription: "A comprehensive agricultural platform providing assessment tools, farm management, and agricultural solutions. Features include farm assessments, crop management, agricultural analytics, and farmer support services. Built to support the agricultural sector in Rwanda with modern technology solutions.",
+    link: "https://starhawk.rw",
+    image: "/farm.JPG",
+    images: ["/farm.JPG"],
+    categories: ["Web", "Agriculture", "Assessment"],
+    createdAt: "2024-09-20",
+    pro: true,
+    technologies: ["React", "Node.js", "MongoDB", "Assessment APIs"],
+    features: [
+      "Farm Assessments",
+      "Crop Management",
+      "Agricultural Analytics",
+      "Farmer Support",
+      "Assessment Tools",
+      "Data Reporting"
+    ],
+    challenges: [
+      "Creating comprehensive assessment tools",
+      "Managing agricultural data",
+      "Supporting farmers effectively"
+    ],
+    solutions: [
+      "Developed custom assessment framework",
+      "Created data management system",
+      "Implemented farmer support portal"
+    ],
+    results: [
+      "80% improvement in assessment efficiency",
+      "70% increase in farmer engagement",
+      "90% data accuracy rate"
+    ],
+    client: "Agricultural Organization",
     duration: "4 months",
     role: "Full-Stack Developer"
   }
