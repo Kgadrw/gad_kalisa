@@ -14,6 +14,7 @@ const Hero = () => {
   
   const navItems = [
     { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
   ];
 
@@ -163,24 +164,24 @@ const Hero = () => {
               <span className="block text-blue-200/90 text-xl lg:text-2xl font-medium">Full-Stack Developer</span>
         </motion.h1>
 
-            {/* Experience Summary */}
+            {/* Personal Tagline */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.3 }}
               className="mb-4"
             >
-              <p className="text-base text-blue-200/90 mb-4">
-                <span className="text-cyan-300 font-semibold">4+ years of experience</span> building <span className="text-purple-300 font-semibold">scalable web applications</span> and <span className="text-pink-300 font-semibold">digital solutions</span> for businesses across <span className="text-blue-300 font-semibold">Rwanda and Africa</span>.
+              <p className="text-base text-blue-200/90 mb-4 leading-relaxed">
+                I turn <span className="text-cyan-300 font-semibold">ideas into digital reality</span>. With <span className="text-purple-300 font-semibold">4+ years</span> of crafting web applications, I help businesses across <span className="text-pink-300 font-semibold">Rwanda and Africa</span> transform their vision into powerful, user-centric solutions that drive growth.
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-blue-200/80 justify-center lg:justify-start">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-cyan-400" />
-                  <span className="text-cyan-300">4+ Years Experience</span>
+                  <span className="text-cyan-300">4+ Years Building</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-2 text-purple-400" />
-                  <span className="text-purple-300">Kigali, Rwanda</span>
+                  <span className="text-purple-300">Based in Kigali, Rwanda</span>
                 </div>
               </div>
             </motion.div>
@@ -233,7 +234,7 @@ const Hero = () => {
               href="mailto:kalisagad05@gmail.com"
                 className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold rounded-3xl border-2 border-cyan-400/40 hover:border-cyan-400/80 hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:text-cyan-300"
             >
-            Start a Project
+            Let's Build Something
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a

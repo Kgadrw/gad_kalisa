@@ -33,13 +33,16 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              About Gad Kalisa
+              About Me
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              I am a passionate full-stack developer with 4+ years of experience building scalable web applications and digital solutions. I specialize in creating user-friendly interfaces and robust backend systems that drive business growth across Rwanda and Africa.
+              Hey! I'm Gad, a full-stack developer from Kigali, Rwanda. What started as curiosity about how websites work has grown into a passion for building digital solutions that make a real impact. I love the challenge of turning complex problems into elegant, user-friendly applications.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              My expertise spans modern web technologies including React, Node.js, and cloud platforms. I have successfully delivered 50+ projects for 30+ clients, focusing on e-commerce, business solutions, and digital transformation initiatives.
+              Over the past 4+ years, I've had the privilege of working with amazing clients across Rwanda and Africa, helping them bring their ideas to life. Whether it's an e-commerce platform, a data analytics dashboard, or a business management system, I approach each project with the same dedication and attention to detail.
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and staying ahead of the curve in this ever-evolving tech landscape.
             </p>
 
             {/* Technical Skills */}
@@ -72,7 +75,7 @@ const About = () => {
                       whileTap={{ scale: 0.98 }}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
                     >
-              Get a Free Quote Today
+              Let's Work Together
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

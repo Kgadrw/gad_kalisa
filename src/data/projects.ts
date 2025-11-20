@@ -178,40 +178,40 @@ export const projects: Project[] = [
   },
   {
     id: "3-dp-rw",
-    name: "3D Printing Rwanda",
-    description: "3D printing services and design platform",
-    longDescription: "A comprehensive platform for 3D printing services, design consultation, and project management. Features include 3D model upload, printing job management, material selection, and project tracking. Built to make 3D printing services accessible and efficient for businesses and individuals in Rwanda.",
+    name: "3DP",
+    description: "Empowering businesses to discover and harness the full potential of data",
+    longDescription: "A comprehensive data platform empowering businesses to discover and harness the full potential of data. Features include data analytics, business intelligence, data visualization, and insights generation. Built to help businesses make data-driven decisions and unlock the value of their data assets.",
     link: "https://3dp.rw",
     image: "/3dp.JPG",
     images: ["/3dp.JPG"],
-    categories: ["Web", "3D Printing", "Manufacturing"],
+    categories: ["Web", "Data Analytics", "Business Intelligence"],
     createdAt: "2024-05-12",
     pro: false,
-    technologies: ["React", "Three.js", "Node.js", "MongoDB", "3D APIs"],
+    technologies: ["React", "Node.js", "MongoDB", "Data Analytics APIs"],
     features: [
-      "3D Model Upload",
-      "Print Job Management",
-      "Material Selection",
-      "Design Consultation",
-      "Project Tracking",
-      "Quality Control"
+      "Data Analytics",
+      "Business Intelligence",
+      "Data Visualization",
+      "Insights Generation",
+      "Data Management",
+      "Reporting Dashboard"
     ],
     challenges: [
-      "Handling 3D file uploads",
-      "Managing print job queues",
-      "Integrating 3D visualization"
+      "Processing large datasets",
+      "Creating intuitive data visualizations",
+      "Ensuring data accuracy and reliability"
     ],
     solutions: [
-      "Implemented secure file upload system",
-      "Created job queue management system",
-      "Integrated Three.js for 3D visualization"
+      "Implemented efficient data processing pipelines",
+      "Created interactive visualization dashboards",
+      "Developed robust data validation systems"
     ],
     results: [
-      "80% increase in 3D printing accessibility",
-      "60% improvement in project turnaround time",
-      "90% customer satisfaction rate"
+      "80% improvement in data accessibility",
+      "60% faster insights generation",
+      "90% user satisfaction rate"
     ],
-    client: "3D Printing Service",
+    client: "Data Platform Service",
     duration: "3 months",
     role: "Full-Stack Developer"
   },
@@ -296,37 +296,42 @@ export const projects: Project[] = [
   {
     id: "nel-ngabo-vercel-app",
     name: "Nel Ngabo",
-    description: "Digital platform and services",
-    longDescription: "A modern digital platform offering various services and solutions. Built with cutting-edge technologies to provide an exceptional user experience and robust functionality.",
+    description: "Personal website for artist Nel Ngabo",
+    longDescription: "A beautiful and modern personal website showcasing the artistic portfolio of Nel Ngabo. Built to display artwork, creative projects, and provide an engaging platform for visitors to explore the artist's work. Features include gallery displays, portfolio sections, and a clean, artistic design that reflects the creative nature of the artist.",
     link: "https://nel-ngabo.vercel.app",
     image: "/web.png",
     images: ["/web.png"],
-    categories: ["Web"],
+    categories: ["Web", "Portfolio", "Art"],
     createdAt: "2024-08-15",
     pro: false,
     technologies: ["Next.js", "React", "TypeScript", "Vercel"],
     features: [
-      "Modern UI/UX",
-      "Responsive Design",
+      "Art Portfolio Gallery",
+      "Modern UI/UX Design",
+      "Responsive Layout",
       "Fast Performance",
-      "SEO Optimized"
+      "SEO Optimized",
+      "Artwork Showcase"
     ],
     challenges: [
-      "Creating engaging user experience",
-      "Ensuring fast load times",
+      "Creating an engaging visual experience",
+      "Showcasing artwork effectively",
+      "Ensuring fast load times for images",
       "Optimizing for various devices"
     ],
     solutions: [
-      "Implemented modern design patterns",
-      "Optimized performance with Next.js",
-      "Created responsive layouts"
+      "Implemented modern gallery layouts",
+      "Optimized image loading and performance",
+      "Created responsive designs for all devices",
+      "Used Next.js for optimal performance"
     ],
     results: [
-      "95% user satisfaction",
+      "Beautiful showcase of artist's work",
       "Fast page load times",
-      "Mobile-friendly experience"
+      "Mobile-friendly experience",
+      "Enhanced artist's online presence"
     ],
-    client: "Digital Services",
+    client: "Nel Ngabo (Artist)",
     duration: "2 months",
     role: "Full-Stack Developer"
   },

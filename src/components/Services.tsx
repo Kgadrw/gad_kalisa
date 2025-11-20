@@ -62,7 +62,7 @@ const Services = () => {
             Services
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-300 max-w-2xl">
-            Comprehensive digital solutions to help your business grow and succeed.
+            I offer a range of services to help bring your digital vision to life. Whether you need a complete web application, a mobile app, or help with digital marketing, I'm here to make it happen.
           </p>
         </motion.div>
 
