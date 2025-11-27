@@ -1,41 +1,23 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Ignore everything
+*
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Except backend folder and this gitignore
+!.gitignore
+!backend/
 
-# testing
-/coverage
+# Backend folder contents
+backend/**
+!backend/.gitignore
+!backend/package.json
+!backend/tsconfig.json
+!backend/README.md
+!backend/src/
+!backend/src/**
+!backend/src/**/*
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Ignore backend build artifacts
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/*.log
+backend/.DS_Store
